@@ -1,0 +1,867 @@
+/* ═══════════════════════════════════════════════════════════════ */
+/*  components.css                                                 */
+/*  可重複使用的元件：導覽列、卡片、按鈕、表單、輪播、影片框等    */
+/* ═══════════════════════════════════════════════════════════════ */
+
+  /* ─── NAV ─── */
+  nav {
+    position: fixed;
+    top: 0; left: 0; right: 0;
+    z-index: 1000;
+    height: var(--nav-h);
+    background: rgba(254, 252, 251, 0.94);
+    backdrop-filter: blur(16px);
+    border-bottom: 1px solid rgba(180,150,155,0.12);
+    display: flex;
+    align-items: center;
+    padding: 0 48px;
+  }
+
+  .nav-inner {
+    width: 100%;
+    height: 100%;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 56px;
+  }
+
+  /* Logo + 選單群組（置中） */
+  .nav-logo {
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+    flex-shrink: 0;
+  }
+
+  .logo-img {
+    height: 52px;
+    width: auto;
+    display: block;
+  }
+
+  .nav-links {
+    display: flex;
+    gap: 32px;
+    list-style: none;
+    align-items: center;
+    margin: 0;
+    padding: 0;
+  }
+
+  .nav-links a {
+    font-size: 13px;
+    font-weight: 500;
+    color: var(--text-mid);
+    text-decoration: none;
+    letter-spacing: 1px;
+    transition: color .2s;
+    position: relative;
+  }
+
+  .nav-links a::after {
+    content: '';
+    position: absolute;
+    bottom: -2px; left: 0; right: 0;
+    height: 1px;
+    background: var(--accent);
+    transform: scaleX(0);
+    transition: transform .2s;
+  }
+
+  .nav-links a:hover { color: var(--accent); }
+  .nav-links a:hover::after { transform: scaleX(1); }
+
+  /* 社群圖示絕對定位於右側 */
+  .nav-right {
+    position: absolute;
+    right: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    display: flex;
+    align-items: center;
+    gap: 6px;
+  }
+
+  .nav-social {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    color: var(--text-mid);
+    text-decoration: none;
+    transition: background .25s ease, color .25s ease, transform .25s ease;
+  }
+
+  .nav-social:hover {
+    background: linear-gradient(135deg, rgba(255,138,171,0.12), rgba(155,107,200,0.12), rgba(107,143,212,0.12));
+    color: var(--accent);
+    transform: translateY(-2px);
+  }
+
+  .nav-social svg {
+    display: block;
+  }
+
+  .nav-cta {
+    background: var(--text-dark);
+    color: var(--white) !important;
+    padding: 8px 20px;
+    border-radius: 2px;
+    font-size: 12px !important;
+    letter-spacing: 1.5px;
+    transition: background .2s !important;
+  }
+
+  .nav-cta:hover { background: var(--accent) !important; color: var(--white) !important; }
+  .nav-cta::after { display: none !important; }
+
+  .nav-divider {
+    width: 1px; height: 14px;
+    background: rgba(160,120,130,0.3);
+  }
+
+  /* Hero deco SVGs */
+  .hero-deco {
+    position: absolute;
+    pointer-events: none;
+    z-index: 1;
+  }
+  .deco-sphere {
+    width: 200px; height: 200px;
+    top: -20px; right: 20px;
+  }
+  .deco-cone {
+    width: 160px; height: 180px;
+    bottom: -30px; left: 20px;
+  }
+  .deco-sparkles {
+    width: 100px; height: 80px;
+    top: 80px; left: 60px;
+  }
+
+  @media (max-width: 900px) {
+    .deco-sphere { width: 130px; height: 130px; }
+    .deco-cone { width: 110px; height: 120px; }
+  }
+  @media (max-width: 600px) {
+    .deco-sphere { width: 90px; height: 90px; top: 0; right: 8px; }
+    .deco-cone { width: 80px; height: 90px; }
+    .deco-sparkles { left: 16px; }
+  }
+
+
+  /* ─── TALENTS ─── */
+  #talents {
+    background: var(--grad-talents);
+    padding-bottom: 80px;
+    text-align: center;
+  }
+
+  .talents-subtitle {
+    font-size: 13px;
+    color: var(--text-soft);
+    margin-top: 8px;
+    margin-bottom: 48px;
+    max-width: 720px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .talents-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 24px;
+    max-width: 1100px;
+    margin: 0 auto;
+  }
+
+  .talent-card {
+    cursor: pointer;
+    position: relative;
+    border-radius: 4px;
+    overflow: hidden;
+    transition: transform .3s, box-shadow .3s;
+  }
+
+  .talent-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 16px 40px rgba(120,80,70,0.15);
+  }
+
+  .talent-card.active {
+    box-shadow: 0 0 0 2px var(--accent);
+  }
+
+  .talent-photo {
+    width: 100%;
+    aspect-ratio: 3/4;
+    object-fit: cover;
+    display: block;
+  }
+
+  .talent-photo-placeholder {
+    width: 100%;
+    aspect-ratio: 3/4;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: 'Noto Serif TC', serif;
+    font-size: 32px;
+    font-weight: 900;
+    color: rgba(255,255,255,0.5);
+  }
+
+  .talent-photo-placeholder.p1  { background: linear-gradient(160deg, #f0c8d8, #d8a0b8); }
+  .talent-photo-placeholder.p2  { background: linear-gradient(160deg, #e8c8d8, #d0a0b8); }
+  .talent-photo-placeholder.p3  { background: linear-gradient(160deg, #d8c8e8, #c0a8d0); }
+  .talent-photo-placeholder.p4  { background: linear-gradient(160deg, #c8d8f0, #a8b8d8); }
+  .talent-photo-placeholder.p5  { background: linear-gradient(160deg, #d8c0d8, #c0a0c0); }
+  .talent-photo-placeholder.p6  { background: linear-gradient(160deg, #f0d0c8, #d8b0a8); }
+  .talent-photo-placeholder.p7  { background: linear-gradient(160deg, #e0c8e8, #c8a8d0); }
+  .talent-photo-placeholder.p8  { background: linear-gradient(160deg, #c8d8e8, #a8b8d0); }
+  .talent-photo-placeholder.p9  { background: linear-gradient(160deg, #e8d0c8, #d0b0a8); }
+  .talent-photo-placeholder.p10 { background: linear-gradient(160deg, #d0c8f0, #b8a8d8); }
+
+  .talent-info {
+    padding: 16px 14px;
+    background: var(--white);
+    text-align: center;
+  }
+
+  .talent-name {
+    font-family: 'Noto Serif TC', serif;
+    font-size: 20px;
+    font-weight: 700;
+    color: var(--text-dark);
+    letter-spacing: 1px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+
+  .talent-en {
+    font-size: 11px;
+    font-weight: 500;
+    color: var(--text-soft);
+    margin-top: 4px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+  }
+
+  /* ─── TALENT MODAL (Fullscreen overlay) ─── */
+  .talent-en.talent-handle {
+    text-transform: none;
+    letter-spacing: 2px;
+    overflow-wrap: anywhere;
+  }
+
+  .talent-modal {
+    position: fixed;
+    inset: 0;
+    z-index: 2000;
+    visibility: hidden;
+    opacity: 0;
+    transition: opacity .3s ease, visibility .3s ease;
+  }
+
+  .talent-modal.open {
+    visibility: visible;
+    opacity: 1;
+  }
+
+  /* 半透明黑色背景 */
+  .talent-modal-backdrop {
+    position: absolute;
+    inset: 0;
+    background: rgba(20, 12, 18, 0.65);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    cursor: pointer;
+  }
+
+  /* Modal 容器 — 含內邊距讓 modal 不貼邊 */
+  .talent-modal-container {
+    position: absolute;
+    inset: 0;
+    overflow-y: auto;
+    overflow-x: hidden;
+    -webkit-overflow-scrolling: touch;
+    padding: 40px 24px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transform: scale(0.96);
+    transition: transform .35s cubic-bezier(.22,1,.36,1);
+  }
+
+  .talent-modal.open .talent-modal-container {
+    transform: scale(1);
+  }
+
+  /* 關閉按鈕 */
+  .talent-modal-close {
+    position: absolute;
+    top: 24px;
+    right: 32px;
+    z-index: 10;
+    width: 42px;
+    height: 42px;
+    border-radius: 50%;
+    border: none;
+    background: rgba(255, 255, 255, 0.92);
+    color: var(--text-dark);
+    font-size: 16px;
+    font-weight: 300;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: background .2s, transform .2s, color .2s;
+    box-shadow: 0 4px 14px rgba(0,0,0,0.18);
+  }
+
+  .talent-modal-close:hover {
+    background: var(--white);
+    color: var(--accent);
+    transform: rotate(90deg) scale(1.06);
+  }
+
+  /* 上一位 / 下一位 切換按鈕 */
+  .talent-modal-nav {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 10;
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    border: none;
+    background: rgba(255, 255, 255, 0.85);
+    color: var(--text-dark);
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: background .2s, transform .2s, color .2s;
+    box-shadow: 0 4px 14px rgba(0,0,0,0.2);
+  }
+
+  .talent-modal-nav.prev { left: 24px; }
+  .talent-modal-nav.next { right: 24px; }
+
+  .talent-modal-nav:hover {
+    background: var(--white);
+    color: var(--accent);
+    box-shadow: 0 6px 20px rgba(0,0,0,0.28);
+  }
+
+  .talent-modal-nav.prev:hover { transform: translateY(-50%) translateX(-3px); }
+  .talent-modal-nav.next:hover { transform: translateY(-50%) translateX(3px); }
+
+  .talent-modal-nav svg {
+    display: block;
+  }
+
+  /* 上/下一位 文字標籤（只在手機顯示） */
+  .nav-label {
+    display: none;
+  }
+
+  /* Modal 內容區（包住所有 detail panels） */
+  .talent-modal-content {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  /* 鎖定背景滾動 */
+  body.modal-open {
+    overflow: hidden;
+  }
+
+  /* ─── 單一 KOL 詳情面板（內嵌於 Modal） ─── */
+  .talent-detail {
+    display: none;
+    width: 100%;
+    max-width: 980px;
+    background: var(--white);
+    border-radius: 16px;
+    box-shadow: 0 24px 60px rgba(20, 12, 18, 0.35);
+    overflow: hidden;
+    position: relative;
+  }
+
+  .talent-detail.show {
+    display: flex;
+    align-items: stretch;
+  }
+
+  /* 左邊照片 — 適中比例 */
+  .detail-photo-col {
+    width: 380px;
+    flex-shrink: 0;
+    background: linear-gradient(160deg, #f0c8d8, #d8a0b8);
+  }
+
+  .detail-photo-col img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    min-height: 500px;
+  }
+
+  .detail-photo-col .detail-photo-placeholder {
+    width: 100%;
+    height: 100%;
+    min-height: 500px;
+  }
+
+  .detail-photo-placeholder {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: 'Noto Serif TC', serif;
+    font-size: 48px;
+    font-weight: 900;
+    color: rgba(255,255,255,0.4);
+    background: linear-gradient(160deg, #f0c8d8, #d8a0b8);
+  }
+
+  /* 右邊內容區 — 細緻間距 */
+  .detail-content {
+    flex: 1;
+    padding: 48px 52px;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    overflow-y: auto;
+    max-height: 80vh;
+  }
+
+  .detail-name-zh {
+    font-family: 'Noto Serif TC', serif;
+    font-size: 28px;
+    font-weight: 900;
+    color: var(--text-dark);
+    margin-bottom: 20px;
+  }
+
+  .detail-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-bottom: 16px;
+    justify-content: center;
+  }
+
+  .tag {
+    font-size: 11px;
+    padding: 4px 12px;
+    border-radius: 100px;
+    background: var(--blush);
+    color: var(--text-mid);
+    letter-spacing: 0.5px;
+  }
+
+  /* 詳情面板社群按鈕 */
+  .detail-socials {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-bottom: 24px;
+    justify-content: center;
+  }
+
+  .detail-social {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    background: var(--white);
+    border: 1px solid rgba(180,150,155,0.25);
+    color: var(--text-mid);
+    text-decoration: none;
+    transition: all .25s ease;
+  }
+
+  .detail-social:hover {
+    transform: translateY(-2px);
+    color: var(--white);
+    border-color: transparent;
+    box-shadow: 0 6px 16px rgba(120,80,90,0.15);
+  }
+
+  /* 每個平台的品牌色 hover */
+  .detail-social.facebook:hover  { background: #1877f2; }
+  .detail-social.youtube:hover   { background: #ff0000; }
+  .detail-social.x:hover         { background: #000000; }
+  .detail-social.twitch:hover    { background: #9146ff; }
+  .detail-social.instagram:hover {
+    background: linear-gradient(45deg, #f09433, #e6683c, #dc2743, #cc2366, #bc1888);
+  }
+  .detail-social.tiktok:hover    { background: #000000; }
+  .detail-social.threads:hover   { background: #000000; }
+
+  .detail-social svg {
+    display: block;
+  }
+
+  /* 連結為 # 的社群按鈕（尚未提供）— 灰階 + 禁用游標 */
+  .detail-social[href="#"] {
+    opacity: 0.4;
+    cursor: not-allowed;
+    pointer-events: none;
+  }
+
+  .detail-bio {
+    font-size: 13px;
+    color: var(--text-mid);
+    line-height: 1.9;
+    margin-bottom: 28px;
+  }
+
+  .detail-media-label {
+    font-size: 11px;
+    font-weight: 700;
+    color: var(--accent);
+    letter-spacing: 2px;
+    margin-bottom: 12px;
+  }
+
+  .detail-media-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 10px;
+  }
+
+  .media-thumb {
+    aspect-ratio: 16/9;
+    border-radius: 4px;
+    background: var(--blush);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    position: relative;
+    overflow: hidden;
+    transition: opacity .2s;
+  }
+
+  .media-thumb:hover { opacity: 0.85; }
+
+  .play-btn {
+    width: 36px; height: 36px;
+    border-radius: 50%;
+    background: rgba(255,255,255,0.9);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .play-btn svg { width: 14px; height: 14px; fill: var(--accent); margin-left: 2px; }
+
+  .media-title {
+    position: absolute;
+    bottom: 0; left: 0; right: 0;
+    padding: 6px 8px;
+    background: linear-gradient(transparent, rgba(0,0,0,0.5));
+    color: white;
+    font-size: 10px;
+  }
+
+  .detail-close {
+    position: absolute;
+    top: 16px; right: 16px;
+    width: 32px; height: 32px;
+    border-radius: 50%;
+    border: 1px solid rgba(120,80,70,0.2);
+    background: transparent;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--text-soft);
+    font-size: 18px;
+    transition: background .2s;
+  }
+
+  .detail-close:hover { background: var(--blush); }
+
+
+  /* ─── YOUTUBE VIDEOS in detail panel ─── */
+  .yt-section {
+    margin-top: 24px;
+    padding-top: 20px;
+    border-top: 1px solid rgba(180,140,150,0.18);
+  }
+
+  .yt-videos {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 12px;
+  }
+
+
+  .yt-video-card {
+    cursor: pointer;
+    border-radius: 6px;
+    overflow: hidden;
+    background: rgba(255,255,255,0.6);
+    border: 1px solid rgba(200,180,185,0.25);
+    transition: transform .2s, box-shadow .2s;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .yt-video-card:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 24px rgba(120,80,90,0.12);
+  }
+
+  .yt-thumb-wrap {
+    position: relative;
+    aspect-ratio: 16 / 9;
+    overflow: hidden;
+    background: var(--blush);
+  }
+
+  .yt-thumb-wrap img,
+  .yt-thumb-wrap iframe {
+    position: absolute;
+    inset: 0;
+    width: 100%; height: 100%;
+    border: none;
+    object-fit: cover;
+    display: block;
+  }
+
+  .yt-play-overlay {
+    position: absolute;
+    inset: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: rgba(0,0,0,0.15);
+    transition: background .2s;
+  }
+
+  .yt-video-card:hover .yt-play-overlay {
+    background: rgba(0,0,0,0.05);
+  }
+
+  .yt-play-btn {
+    width: 48px; height: 48px;
+    border-radius: 50%;
+    background: rgba(255,255,255,0.92);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+  }
+
+  .yt-play-btn svg {
+    width: 18px; height: 18px;
+    fill: var(--accent);
+    margin-left: 3px;
+  }
+
+  .yt-video-title {
+    padding: 10px 12px;
+    font-size: 12px;
+    color: var(--text-dark);
+    line-height: 1.45;
+    font-weight: 500;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+  }
+
+  .yt-loading,
+  .yt-error {
+    grid-column: 1 / -1;
+    padding: 32px 16px;
+    text-align: center;
+    font-size: 12px;
+    color: var(--text-soft);
+    background: rgba(255,255,255,0.4);
+    border-radius: 6px;
+  }
+
+  .yt-error { color: var(--accent); }
+
+  @media (max-width: 700px) {
+    .yt-videos { grid-template-columns: 1fr; }
+  }
+
+  /* ─── COMING SOON badge (used in shop section) ─── */
+  .shop-coming-soon {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    padding: 14px 28px;
+    background: rgba(255,255,255,0.6);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(184,90,122,0.2);
+    border-radius: 100px;
+    font-size: 13px;
+    font-weight: 500;
+    color: var(--text-mid);
+    letter-spacing: 1px;
+    box-shadow: 0 4px 20px rgba(184,90,122,0.08);
+  }
+
+  .badge-pulse {
+    display: inline-block;
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background: var(--accent);
+    box-shadow: 0 0 0 0 rgba(184,90,122,0.7);
+    animation: badgePulse 2s ease-in-out infinite;
+  }
+
+  @keyframes badgePulse {
+    0%, 100% { box-shadow: 0 0 0 0 rgba(184,90,122,0.7); transform: scale(1); }
+    50%      { box-shadow: 0 0 0 8px rgba(184,90,122,0); transform: scale(1.1); }
+  }
+
+  .coming-soon-text {
+    background: linear-gradient(135deg, #c85a8a 0%, #9b6bc8 50%, #6b8fd4 100%);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    color: transparent;
+    font-weight: 600;
+  }
+
+  /* ─── DISABLED NAV LINK ─── */
+  .nav-links a.nav-disabled {
+    color: var(--text-soft);
+    opacity: 0.55;
+    cursor: not-allowed;
+    position: relative;
+  }
+
+  .nav-links a.nav-disabled::after {
+    display: none;  /* no underline animation */
+  }
+
+  /* Tooltip on hover */
+  .nav-links a.nav-disabled:hover {
+    color: var(--text-soft);
+  }
+
+  .nav-links a.nav-disabled[data-tooltip]:hover::before {
+    content: attr(data-tooltip);
+    position: absolute;
+    top: calc(100% + 12px);
+    left: 50%;
+    transform: translateX(-50%);
+    background: var(--text-dark);
+    color: var(--white);
+    font-size: 11px;
+    padding: 6px 12px;
+    border-radius: 4px;
+    white-space: nowrap;
+    letter-spacing: 0.5px;
+    z-index: 2000;
+    pointer-events: none;
+    animation: tooltipFadeIn .2s ease forwards;
+  }
+
+  @keyframes tooltipFadeIn {
+    from { opacity: 0; transform: translateX(-50%) translateY(-4px); }
+    to   { opacity: 1; transform: translateX(-50%) translateY(0); }
+  }
+
+  /* Mobile disabled label */
+  .mobile-menu a.nav-disabled {
+    color: var(--text-soft);
+    opacity: 0.6;
+  }
+
+  .mob-disabled-tag {
+    display: inline-block;
+    margin-left: 8px;
+    font-size: 10px;
+    padding: 2px 8px;
+    border-radius: 100px;
+    background: rgba(184,90,122,0.12);
+    color: var(--accent);
+    letter-spacing: 0.5px;
+    vertical-align: middle;
+    font-weight: 600;
+  }
+  .hamburger {
+    display: none;
+    flex-direction: column;
+    justify-content: center;
+    gap: 5px;
+    width: 36px;
+    height: 36px;
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 4px;
+    z-index: 1100;
+    position: absolute;
+    right: 20px;
+  }
+  .hamburger span {
+    display: block;
+    height: 2px;
+    background: var(--text-dark);
+    border-radius: 2px;
+    transition: transform .3s, opacity .3s;
+  }
+  .hamburger.open span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
+  .hamburger.open span:nth-child(2) { opacity: 0; }
+  .hamburger.open span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
+
+  .mobile-menu {
+    display: none;
+    position: fixed;
+    top: var(--nav-h);
+    left: 0; right: 0;
+    background: rgba(253,250,249,0.98);
+    backdrop-filter: blur(16px);
+    z-index: 999;
+    flex-direction: column;
+    padding: 24px 32px 32px;
+    border-bottom: 1px solid rgba(180,150,210,0.2);
+  }
+  .mobile-menu.open { display: flex; }
+  .mobile-menu a {
+    display: block;
+    font-size: 16px;
+    font-weight: 500;
+    color: var(--text-mid);
+    text-decoration: none;
+    padding: 14px 0;
+    border-bottom: 1px solid rgba(200,180,170,0.2);
+    letter-spacing: 1px;
+    transition: color .2s;
+  }
+  .mobile-menu a:hover { color: var(--accent); }
+  .mobile-menu .mob-cta {
+    margin-top: 20px;
+    display: block;
+    background: var(--text-dark);
+    color: var(--white) !important;
+    text-align: center;
+    padding: 12px 0;
+    border-radius: 2px;
+    letter-spacing: 1.5px;
+    font-size: 13px;
+    border: none;
+  }

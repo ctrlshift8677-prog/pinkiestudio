@@ -1,0 +1,1081 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>拼經紀娛樂｜Pinkie Studio</title>
+<!-- Favicon -->
+<link rel="icon" type="image/x-icon" href="favicon.ico">
+<link rel="icon" type="image/png" sizes="16x16" href="favicon-16.png">
+<link rel="icon" type="image/png" sizes="32x32" href="favicon-32.png">
+<link rel="icon" type="image/png" sizes="192x192" href="favicon-192.png">
+<link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
+<meta name="theme-color" content="#c85a8a">
+<!-- Fonts & CSS -->
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+TC:wght@400;600;700;900&family=Noto+Sans+TC:wght@300;400;500;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/base.css">
+<link rel="stylesheet" href="css/components.css">
+<link rel="stylesheet" href="css/layout.css">
+<link rel="stylesheet" href="css/animations.css">
+</head>
+<body>
+
+<!-- ─── NAV ─── -->
+<nav>
+  <div class="nav-inner">
+    <a href="#hero" class="nav-logo">
+      <img src="logo.png" alt="拼經紀" class="logo-img">
+    </a>
+    <ul class="nav-links">
+      <li><a href="#about">關於我們</a></li>
+      <li><div class="nav-divider"></div></li>
+      <li><a href="#talents">旗下藝人</a></li>
+      <li><div class="nav-divider"></div></li>
+      <li><a href="#join">加入我們</a></li>
+      <li><div class="nav-divider"></div></li>
+      <li><a href="#contact">合作洽詢</a></li>
+      <li><div class="nav-divider"></div></li>
+      <li><a href="#shop" class="nav-disabled" data-tooltip="商城功能尚未開放">官方商城</a></li>
+    </ul>
+    <div class="nav-right">
+      <a href="https://www.instagram.com/_pinkiestudio/" target="_blank" rel="noopener" class="nav-social" aria-label="Instagram">
+        <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+          <rect x="3" y="3" width="18" height="18" rx="5" ry="5"></rect>
+          <circle cx="12" cy="12" r="4"></circle>
+          <circle cx="17.5" cy="6.5" r="1" fill="currentColor"></circle>
+        </svg>
+      </a>
+      <a href="https://www.twitch.tv/team/pinpinstudio" target="_blank" rel="noopener" class="nav-social" aria-label="Twitch">
+        <svg viewBox="0 0 24 24" width="18" height="18" fill="currentColor">
+          <path d="M11.6 4.3l-7 1V17.5l3.4 1V20l5 .9V19h3l1.8-1.8h2.7l3.5-3.5V4.3H11.6zm9.1 8.7l-2 2h-3.2L13.7 17v-2h-2.6V5.8h9.6V13z"/>
+          <path d="M18.4 7.5h-1.3v4h1.3v-4zM15 7.5h-1.3v4H15v-4z"/>
+        </svg>
+      </a>
+    </div>
+  </div>
+  <button class="hamburger" id="hamburger" aria-label="選單" onclick="toggleMenu()">
+    <span></span><span></span><span></span>
+  </button>
+</nav>
+
+<!-- ─── MOBILE MENU ─── -->
+<div class="mobile-menu" id="mobileMenu">
+  <a href="#about" onclick="closeMenu()">關於我們</a>
+  <a href="#talents" onclick="closeMenu()">旗下藝人</a>
+  <a href="#join" onclick="closeMenu()">加入我們</a>
+  <a href="#contact" onclick="closeMenu()">合作洽詢</a>
+  <a href="#shop" class="nav-disabled" onclick="closeMenu()">官方商城 <span class="mob-disabled-tag">尚未開放</span></a>
+</div>
+
+<!-- ─── HERO ─── -->
+<section id="hero">
+  <!-- 標題區（Banner 上方獨立區塊） -->
+  <div class="hero-text">
+    <!-- 裝飾閃光 -->
+    <svg class="hero-deco deco-sparkles" viewBox="0 0 100 80" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+      <path d="M22,14 L24,22 L32,24 L24,26 L22,34 L20,26 L12,24 L20,22 Z" fill="rgba(220,160,200,0.65)"/>
+      <path d="M55,8 L56,13 L61,14 L56,15 L55,20 L54,15 L49,14 L54,13 Z" fill="rgba(200,160,220,0.55)"/>
+      <path d="M78,30 L79,33 L82,34 L79,35 L78,38 L77,35 L74,34 L77,33 Z" fill="rgba(180,200,240,0.5)"/>
+      <circle cx="38" cy="48" r="5" fill="rgba(220,160,200,0.45)"/>
+      <circle cx="52" cy="42" r="3" fill="rgba(180,220,255,0.5)"/>
+      <circle cx="45" cy="56" r="2" fill="rgba(255,200,220,0.45)"/>
+    </svg>
+    <h1 class="reveal">旗下創作者<span>夥伴</span></h1>
+    <p class="reveal">拼經紀娛樂工作室以 KOL Agency 模式，整合頂尖創作者的創意力量，為品牌打造最有說服力的內容行銷解決方案。</p>
+  </div>
+
+  <!-- 滿版輪播 Banner（下方獨立區塊） -->
+  <div class="hero-carousel" id="heroCarousel">
+    <div class="carousel-track" id="carouselTrack">
+      <div class="carousel-slide">
+        <img src="banner3.jpg" alt="CrazyFace 與京野妮子正式加入拼經紀">
+      </div>
+      <div class="carousel-slide">
+        <img src="banner1.jpg" alt="拼經紀旗下創作者夥伴 1">
+      </div>
+      <div class="carousel-slide">
+        <img src="banner2.jpg" alt="拼經紀旗下創作者夥伴 2">
+      </div>
+    </div>
+    <!-- 浮動輪播控制 -->
+    <div class="carousel-nav">
+      <button class="carousel-btn" onclick="carouselPrev()" aria-label="上一張">&#8592;</button>
+      <div class="carousel-dots" id="carouselDots"></div>
+      <button class="carousel-btn" onclick="carouselNext()" aria-label="下一張">&#8594;</button>
+    </div>
+  </div>
+</section>
+
+<!-- ─── ABOUT ─── -->
+<section id="about">
+  <div class="floating-dots" aria-hidden="true">
+    <div class="floating-dot d1"></div>
+    <div class="floating-dot d2"></div>
+    <div class="floating-dot d3"></div>
+    <div class="floating-dot d4"></div>
+  </div>
+  <div class="about-left">
+    <div class="section-label reveal">About Us</div>
+    <h2 class="section-title reveal">我們是<span>拼經紀</span></h2>
+    <p class="about-tagline reveal">致力於打造「不只是經紀，更是創作者背後最穩固後盾的團隊」</p>
+  </div>
+  <div class="about-items stagger-children">
+    <div class="about-item">
+      <div class="about-num">01</div>
+      <div class="about-text">
+        <div class="about-item-title">專業經紀與品牌合作</div>
+        <div class="about-item-desc">結合創作者經紀、數位行銷與遊戲產業豐富經驗，提供內容規劃、品牌合作及商業媒合等全方位服務，創造創作者與品牌雙贏價值。</div>
+      </div>
+    </div>
+    <div class="about-item">
+      <div class="about-num">02</div>
+      <div class="about-text">
+        <div class="about-item-title">多元創作者陣容</div>
+        <div class="about-item-desc">旗下創作者橫跨 FPS、MOBA、MMORPG、娛樂綜藝與生活風格等領域，擁有鮮明特色與穩定影響力，是品牌推廣與遊戲行銷的最佳夥伴。</div>
+      </div>
+    </div>
+    <div class="about-item">
+      <div class="about-num">03</div>
+      <div class="about-text">
+        <div class="about-item-title">以內容創造影響力</div>
+        <div class="about-item-desc">透過精準 KOL 媒合、創意企劃與跨平台整合，協助品牌有效觸及目標受眾，提升曝光、互動與行銷成效。</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ─── TALENTS ─── -->
+<section id="talents">
+  <div class="floating-dots" aria-hidden="true">
+    <div class="floating-dot d1"></div>
+    <div class="floating-dot d2"></div>
+    <div class="floating-dot d3"></div>
+    <div class="floating-dot d4"></div>
+  </div>
+  <div class="section-label reveal">Our Talents</div>
+  <h2 class="section-title reveal">旗下<span>藝人</span></h2>
+  <p class="talents-subtitle reveal">每一位都是各自領域的頂尖創作者，用熱情與實力影響觀眾。</p>
+
+  <div class="talents-grid stagger-children" id="talentsGrid">
+
+    <div class="talent-card" data-id="t1" data-yt-handle="overloadtw" onclick="toggleTalent('t1', this)">
+      <img class="talent-photo" src="photos/01_overload.jpg" alt="超負荷" loading="lazy">
+      <div class="talent-info">
+        <div class="talent-name">超負荷</div>
+        <div class="talent-en">Overload</div>
+      </div>
+    </div>
+
+    <div class="talent-card" data-id="t11" data-yt-handle="Crazyface" onclick="toggleTalent('t11', this)">
+      <img class="talent-photo" src="photos/11_crazyface.jpg" alt="CrazyFace" loading="lazy">
+      <div class="talent-info">
+        <div class="talent-name">CrazyFace</div>
+        <div class="talent-en talent-handle">CrazyFace</div>
+      </div>
+    </div>
+
+    <div class="talent-card" data-id="t12" data-yt-handle="niconini11369" onclick="toggleTalent('t12', this)">
+      <img class="talent-photo" src="photos/12_niconini.jpg" alt="京野妮子" loading="lazy">
+      <div class="talent-info">
+        <div class="talent-name">京野妮子</div>
+        <div class="talent-en talent-handle">Nico</div>
+      </div>
+    </div>
+
+    <div class="talent-card" data-id="t2" data-yt-handle="goodson0706" onclick="toggleTalent('t2', this)">
+      <img class="talent-photo" src="photos/02_goodson.jpg" alt="乖兒子 GoodSon" loading="lazy">
+      <div class="talent-info">
+        <div class="talent-name">乖兒子</div>
+        <div class="talent-en">GoodSon</div>
+      </div>
+    </div>
+
+    <div class="talent-card" data-id="t3" data-yt-handle="luyee_1004" onclick="toggleTalent('t3', this)">
+      <img class="talent-photo" src="photos/03_luyee.jpg" alt="嚕乙 Luyee" loading="lazy">
+      <div class="talent-info">
+        <div class="talent-name">嚕乙</div>
+        <div class="talent-en">Luyee</div>
+      </div>
+    </div>
+
+    <div class="talent-card" data-id="t4" data-yt-handle="rexderyt" onclick="toggleTalent('t4', this)">
+      <img class="talent-photo" src="photos/04_rex.jpg" alt="雷克獅 Rex" loading="lazy">
+      <div class="talent-info">
+        <div class="talent-name">雷克獅</div>
+        <div class="talent-en">Rex</div>
+      </div>
+    </div>
+
+    <div class="talent-card" data-id="t5" data-yt-handle="kmomo0512" onclick="toggleTalent('t5', this)">
+      <img class="talent-photo" src="photos/05_kmomo.jpg" alt="許摸摸 Kmomo" loading="lazy">
+      <div class="talent-info">
+        <div class="talent-name">許摸摸</div>
+        <div class="talent-en">Kmomo</div>
+      </div>
+    </div>
+
+    <div class="talent-card" data-id="t6" data-yt-handle="PpdbJ0320" onclick="toggleTalent('t6', this)">
+      <img class="talent-photo" src="photos/06_ppdbj.jpg" alt="佩佩豬伯爵 PpdbJ" loading="lazy">
+      <div class="talent-info">
+        <div class="talent-name">佩佩豬伯爵</div>
+        <div class="talent-en">PpdbJ</div>
+      </div>
+    </div>
+
+    <div class="talent-card" data-id="t7" data-yt-handle="a1chenb" onclick="toggleTalent('t7', this)">
+      <img class="talent-photo" src="photos/07_a1chen.jpg" alt="小三登" loading="lazy">
+      <div class="talent-info">
+        <div class="talent-name">小三登</div>
+        <div class="talent-en">A1Chen</div>
+      </div>
+    </div>
+
+    <div class="talent-card" data-id="t8" data-yt-handle="XiaoLin1122" onclick="toggleTalent('t8', this)">
+      <img class="talent-photo" src="photos/08_xiaolin.jpg" alt="小霖 XiaoLin" loading="lazy">
+      <div class="talent-info">
+        <div class="talent-name">小霖</div>
+        <div class="talent-en">XiaoLin</div>
+      </div>
+    </div>
+
+    <div class="talent-card" data-id="t9" data-yt-handle="WuWei" onclick="toggleTalent('t9', this)">
+      <img class="talent-photo" src="photos/09_wuwei.jpg" alt="WuWei 無為" loading="lazy">
+      <div class="talent-info">
+        <div class="talent-name">無為</div>
+        <div class="talent-en">WuWei</div>
+      </div>
+    </div>
+
+    <div class="talent-card" data-id="t10" data-yt-handle="otakumsvideo" onclick="toggleTalent('t10', this)">
+      <img class="talent-photo" src="photos/10_ms.jpg" alt="肥宅MS" loading="lazy">
+      <div class="talent-info">
+        <div class="talent-name">肥宅MS</div>
+        <div class="talent-en">OtakuMS</div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- ─── JOIN ─── -->
+<section id="join">
+  <div class="floating-dots" aria-hidden="true">
+    <div class="floating-dot d1"></div>
+    <div class="floating-dot d2"></div>
+    <div class="floating-dot d3"></div>
+    <div class="floating-dot d4"></div>
+  </div>
+  <div class="join-left">
+    <div class="section-label reveal">Join Us</div>
+    <h2 class="section-title reveal">加入<span>我們</span></h2>
+    <p class="join-desc reveal">我們持續尋找具有個人特色與創作潛力的創作者。<br>
+      無論是實況、影片企劃或短影音內容，<br>
+      只要擁有穩定經營能力、良好自律與一定社群基礎，都歡迎來信與我們交流。<br><br>
+      我們希望透過經紀團隊的資源與經驗，協助創作者在內容發展、品牌合作與長期經營上獲得更完整的支持，並依照風格與方向評估合適的合作模式。</p>
+  </div>
+  <form class="join-form" id="joinForm" action="https://formspree.io/f/xpqbeoqq" method="POST">
+    <input type="hidden" name="_subject" value="【加入我們】創作者投遞表單">
+    <div class="form-row">
+      <div class="form-field">
+        <label>姓名 / 頻道名稱 <span class="required">*</span></label>
+        <input type="text" name="姓名／頻道名稱" placeholder="你的名字或頻道" required>
+      </div>
+      <div class="form-field">
+        <label>聯絡信箱 <span class="required">*</span></label>
+        <input type="email" name="聯絡信箱" data-replyto placeholder="email@example.com" required>
+      </div>
+    </div>
+    <div class="form-row">
+      <div class="form-field">
+        <label>平台類型 <span class="required">*</span></label>
+        <select name="平台類型" required>
+          <option value="">請選擇</option>
+          <option>YouTube</option>
+          <option>Twitch</option>
+          <option>Instagram</option>
+          <option>TikTok</option>
+          <option>其他</option>
+        </select>
+      </div>
+      <div class="form-field">
+        <label>頻道連結</label>
+        <input type="url" name="頻道連結" placeholder="https://...">
+      </div>
+    </div>
+    <div class="form-field">
+      <label>自我介紹 / 合作想法 <span class="required">*</span></label>
+      <textarea name="自我介紹／合作想法" placeholder="簡單介紹你的內容方向與合作期待..." required></textarea>
+    </div>
+    <p class="join-note">提交即代表你同意我們的 <a href="#">隱私政策</a></p>
+    <div class="form-submit-wrap">
+      <button class="btn-primary" type="submit">送出申請</button>
+    </div>
+    <div class="form-status" aria-live="polite"></div>
+  </form>
+</section>
+
+<!-- ─── CONTACT ─── -->
+<section id="contact">
+  <div class="floating-dots" aria-hidden="true">
+    <div class="floating-dot d1"></div>
+    <div class="floating-dot d2"></div>
+    <div class="floating-dot d3"></div>
+    <div class="floating-dot d4"></div>
+  </div>
+  <div class="contact-info">
+    <div class="section-label reveal">Contact Us</div>
+    <h2 class="section-title reveal">合作<span>洽詢</span></h2>
+    <div style="margin-top:32px">
+      <div class="contact-item">
+      </div>
+    </div>
+  </div>
+  <form class="contact-form" id="contactForm" action="https://formspree.io/f/xkoyapoj" method="POST">
+    <input type="hidden" name="_subject" value="【合作洽詢】廠商合作表單">
+    <div class="form-field">
+      <label>公司名稱 <span class="required">*</span></label>
+      <input type="text" name="公司名稱" placeholder="貴公司 / 品牌名稱" required>
+    </div>
+    <div class="form-field">
+      <label>聯絡人 <span class="required">*</span></label>
+      <input type="text" name="聯絡人" placeholder="姓名" required>
+    </div>
+    <div class="form-field">
+      <label>電話</label>
+      <input type="tel" name="電話" placeholder="聯絡電話">
+    </div>
+    <div class="form-field">
+      <label>信箱 <span class="required">*</span></label>
+      <input type="email" name="信箱" data-replyto placeholder="email@company.com" required>
+    </div>
+    <div class="form-field full">
+      <label>合作類型 <span class="required">*</span></label>
+      <select name="合作類型" required>
+        <option value="">請選擇合作類型</option>
+        <option>品牌業配</option>
+        <option>直播活動</option>
+        <option>內容企劃</option>
+        <option>長期合作</option>
+        <option>其他</option>
+      </select>
+    </div>
+    <div class="form-field full">
+      <label>合作說明 <span class="required">*</span></label>
+      <textarea name="合作說明" placeholder="請簡述合作需求與預算範圍..." required></textarea>
+    </div>
+    <div class="contact-form-actions">
+      <button class="btn-secondary" type="reset">清除</button>
+      <button class="btn-primary" type="submit">送出詢問</button>
+    </div>
+    <div class="form-status full" aria-live="polite"></div>
+  </form>
+</section>
+
+<!-- ─── SHOP (Coming Soon) ─── -->
+<section id="shop">
+  <div class="floating-dots" aria-hidden="true">
+    <div class="floating-dot d1"></div>
+    <div class="floating-dot d2"></div>
+    <div class="floating-dot d3"></div>
+    <div class="floating-dot d4"></div>
+  </div>
+  <div class="shop-inner">
+    <div class="section-label reveal">Official Store</div>
+    <h2 class="section-title reveal">商城<span>功能</span></h2>
+    <div class="shop-coming-soon reveal">
+      <span class="badge-pulse"></span>
+      <span class="coming-soon-text">Coming Soon · 正在準備中，敬請期待</span>
+    </div>
+  </div>
+</section>
+
+<!-- ─── FOOTER ─── -->
+<footer>
+  <div class="footer-inner">
+    <img src="logo_full.png" alt="拼經紀娛樂工作室" class="footer-logo-img">
+    <div class="footer-right">
+      <div class="footer-socials">
+        <a href="https://www.twitch.tv/team/pinpinstudio" target="_blank" rel="noopener" class="footer-social twitch" aria-label="Twitch">
+          <svg viewBox="0 0 24 24" width="20" height="20" fill="currentColor">
+            <path d="M11.6 4.3l-7 1V17.5l3.4 1V20l5 .9V19h3l1.8-1.8h2.7l3.5-3.5V4.3H11.6zm9.1 8.7l-2 2h-3.2L13.7 17v-2h-2.6V5.8h9.6V13z"/>
+            <path d="M18.4 7.5h-1.3v4h1.3v-4zM15 7.5h-1.3v4H15v-4z"/>
+          </svg>
+        </a>
+        <a href="https://www.instagram.com/_pinkiestudio/" target="_blank" rel="noopener" class="footer-social instagram" aria-label="Instagram">
+          <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+            <rect x="3" y="3" width="18" height="18" rx="5" ry="5"></rect>
+            <circle cx="12" cy="12" r="4"></circle>
+            <circle cx="17.5" cy="6.5" r="1" fill="currentColor"></circle>
+          </svg>
+        </a>
+      </div>
+      <p class="footer-contact">商案合作洽詢：<a href="mailto:sales@pinkiestudio.info">sales@pinkiestudio.info</a></p>
+      <div class="footer-divider"></div>
+      <p class="footer-copy">© 2026 拼經紀娛樂工作室 All Rights Reserved.</p>
+    </div>
+  </div>
+</footer>
+
+
+<!-- ─── TALENT MODAL ─── -->
+<div class="talent-modal" id="talentModal" aria-hidden="true">
+  <div class="talent-modal-backdrop" onclick="closeTalentModal()"></div>
+  <button class="talent-modal-close" onclick="closeTalentModal()" aria-label="關閉">✕</button>
+  <button class="talent-modal-nav prev" onclick="navTalent(-1)" aria-label="上一位">
+    <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 18 9 12 15 6"></polyline></svg>
+    <span class="nav-label">上一位</span>
+  </button>
+  <button class="talent-modal-nav next" onclick="navTalent(1)" aria-label="下一位">
+    <span class="nav-label">下一位</span>
+    <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"></polyline></svg>
+  </button>
+  <div class="talent-modal-container">
+    <div class="talent-modal-content">
+<div class="talent-detail" id="detail-t1">
+      <div class="detail-photo-col"><img class="detail-photo" src="photos/01_overload.jpg" alt="超負荷" loading="lazy"></div>
+      <div class="detail-content">
+        <div class="detail-name-zh">超負荷</div>
+        <div class="detail-tags"><span class="tag">遊戲</span><span class="tag">實況主</span></div>
+                        <div class="detail-socials">
+          <a href="https://www.facebook.com/overloadtw/?locale=zh_TW" target="_blank" rel="noopener" class="detail-social facebook" aria-label="Facebook" title="Facebook"><svg viewBox="0 0 24 24" fill="currentColor" width="16" height="16"><path d="M14 9h3V5h-3c-2.21 0-4 1.79-4 4v2H7v4h3v8h4v-8h3l1-4h-4V9c0-.55.45-1 1-1z"/></svg></a>
+          <a href="https://www.youtube.com/@overloadtw" target="_blank" rel="noopener" class="detail-social youtube" aria-label="YouTube" title="YouTube"><svg viewBox="0 0 24 24" fill="currentColor" width="16" height="16"><path d="M21.6 7.2c-.2-1-.9-1.7-1.9-1.9C18 5 12 5 12 5s-6 0-7.7.3c-1 .2-1.7.9-1.9 1.9C2 8.9 2 12 2 12s0 3.1.3 4.8c.2 1 .9 1.7 1.9 1.9C5.9 19 12 19 12 19s6.1 0 7.8-.3c1-.2 1.7-.9 1.9-1.9.3-1.7.3-4.8.3-4.8s0-3.1-.4-4.8zM10 15V9l5 3-5 3z"/></svg></a>
+          <a href="https://www.twitch.tv/sam1268" target="_blank" rel="noopener" class="detail-social twitch" aria-label="Twitch" title="Twitch"><svg viewBox="0 0 24 24" fill="currentColor" width="16" height="16"><path d="M11.6 4.3l-7 1V17.5l3.4 1V20l5 .9V19h3l1.8-1.8h2.7l3.5-3.5V4.3H11.6zm9.1 8.7l-2 2h-3.2L13.7 17v-2h-2.6V5.8h9.6V13z"/><path d="M18.4 7.5h-1.3v4h1.3v-4zM15 7.5h-1.3v4H15v-4z"/></svg></a>
+          <a href="https://www.instagram.com/overloadtw/" target="_blank" rel="noopener" class="detail-social instagram" aria-label="Instagram" title="Instagram"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" width="16" height="16"><rect x="3" y="3" width="18" height="18" rx="5" ry="5"></rect><circle cx="12" cy="12" r="4"></circle><circle cx="17.5" cy="6.5" r="1" fill="currentColor"></circle></svg></a>
+        </div>
+        <p class="detail-bio">Twitch 指標型遊戲實況主，以熱血直率、幽默風趣的風格深受玩家喜愛。長期深耕《英雄聯盟》內容，擁有高度社群影響力與忠誠粉絲基礎，擅長遊戲推廣、品牌合作及大型活動曝光。</p>
+        <div class="yt-section">
+          <div class="detail-media-label">LATEST VIDEOS · 最新影片</div>
+          <div class="yt-videos" id="yt-t1" data-yt-handle="overloadtw">
+            <div class="yt-loading">載入中...</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="talent-detail" id="detail-t11">
+      <div class="detail-photo-col"><img class="detail-photo" src="photos/11_crazyface.jpg" alt="CrazyFace" loading="lazy"></div>
+      <div class="detail-content">
+        <div class="detail-name-zh">CrazyFace</div>
+        <div class="detail-tags"><span class="tag">遊戲</span><span class="tag">實況主</span><span class="tag">開箱</span><span class="tag">影音創作者</span></div>
+        <div class="detail-socials">
+          <a href="https://www.twitch.tv/crazyfacetw" target="_blank" rel="noopener" class="detail-social twitch" aria-label="Twitch" title="Twitch"><svg viewBox="0 0 24 24" fill="currentColor" width="16" height="16"><path d="M11.6 4.3l-7 1V17.5l3.4 1V20l5 .9V19h3l1.8-1.8h2.7l3.5-3.5V4.3H11.6zm9.1 8.7l-2 2h-3.2L13.7 17v-2h-2.6V5.8h9.6V13z"/><path d="M18.4 7.5h-1.3v4h1.3v-4zM15 7.5h-1.3v4H15v-4z"/></svg></a>
+          <a href="https://www.facebook.com/crazyfacetw" target="_blank" rel="noopener" class="detail-social facebook" aria-label="Facebook" title="Facebook"><svg viewBox="0 0 24 24" fill="currentColor" width="16" height="16"><path d="M14 9h3V5h-3c-2.21 0-4 1.79-4 4v2H7v4h3v8h4v-8h3l1-4h-4V9c0-.55.45-1 1-1z"/></svg></a>
+          <a href="https://www.instagram.com/crazyface1126/" target="_blank" rel="noopener" class="detail-social instagram" aria-label="Instagram" title="Instagram"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" width="16" height="16"><rect x="3" y="3" width="18" height="18" rx="5" ry="5"></rect><circle cx="12" cy="12" r="4"></circle><circle cx="17.5" cy="6.5" r="1" fill="currentColor"></circle></svg></a>
+          <a href="https://www.youtube.com/@Crazyface" target="_blank" rel="noopener" class="detail-social youtube" aria-label="YouTube" title="YouTube"><svg viewBox="0 0 24 24" fill="currentColor" width="16" height="16"><path d="M21.6 7.2c-.2-1-.9-1.7-1.9-1.9C18 5 12 5 12 5s-6 0-7.7.3c-1 .2-1.7.9-1.9 1.9C2 8.9 2 12 2 12s0 3.1.3 4.8c.2 1 .9 1.7 1.9 1.9C5.9 19 12 19 12 19s6.1 0 7.8-.3c1-.2 1.7-.9 1.9-1.9.3-1.7.3-4.8.3-4.8s0-3.1-.4-4.8zM10 15V9l5 3-5 3z"/></svg></a>
+          <a href="https://www.tiktok.com/@crazyfacetw" target="_blank" rel="noopener" class="detail-social tiktok" aria-label="TikTok" title="TikTok"><svg viewBox="0 0 24 24" fill="currentColor" width="16" height="16"><path d="M19.6 8.3c-1.5 0-3-.5-4.2-1.4v6.4c0 4.3-3.5 7.7-7.8 7.7-1.6 0-3.1-.5-4.4-1.3 1.1.4 2.3.7 3.5.7 4.3 0 7.8-3.5 7.8-7.7V6.5c1.2.9 2.7 1.4 4.2 1.4V8.3zM14.4 5.5c-.6-.7-1-1.6-1.1-2.5h-2v12.4c0 1.6-1.3 2.9-2.9 2.9-.5 0-1-.1-1.4-.4.4 1.1 1.5 1.9 2.7 1.9 1.6 0 2.9-1.3 2.9-2.9V6.2c1.2.9 2.6 1.4 4.2 1.4V5.4c-.8 0-1.6-.2-2.4.1z"/></svg></a>
+        </div>
+        <p class="detail-bio">16 歲即加入職業戰隊、成為台灣最年輕的電競國手之一，並參與國際賽事。現活躍於遊戲實況與賽事 Watch Party，憑藉豐富的 FPS 競技經驗與專業遊戲理解，擅長戰術分析、賽事講解及娛樂互動，在 FPS 玩家族群中擁有穩定且高黏著度的觀眾；此外亦跨足影視與聲音演出，曾參與電影《鬼牽手》及《森之聲》角色配音，具備多元的鏡頭與演出經驗。</p>
+        <div class="yt-section">
+          <div class="detail-media-label">FEATURED VIDEOS · 精選影片</div>
+          <div class="yt-videos" id="yt-t11" data-yt-handle="Crazyface" data-yt-fallback="true">
+            <div class="yt-video-card" onclick="playVideo(this, 'UYrNg1BAqvM')">
+              <div class="yt-thumb-wrap">
+                <img src="https://i.ytimg.com/vi/UYrNg1BAqvM/hqdefault.jpg" alt="4殺還說自己泡？累到在遊戲裡看到髒東西...｜特戰英豪【Crazyface】" loading="lazy">
+                <div class="yt-play-overlay">
+                  <div class="yt-play-btn"><svg viewBox="0 0 16 16"><polygon points="3,1 15,8 3,15"/></svg></div>
+                </div>
+              </div>
+              <div class="yt-video-title">4殺還說自己泡？累到在遊戲裡看到髒東西...｜特戰英豪【Crazyface】</div>
+            </div>
+            <div class="yt-video-card" onclick="playVideo(this, 'VLi-b7JPliM')">
+              <div class="yt-thumb-wrap">
+                <img src="https://i.ytimg.com/vi/VLi-b7JPliM/hqdefault.jpg" alt="拿鞭子想被嚴厲斥責？斥責的人是我自己！｜特戰英豪【Crazyface】" loading="lazy">
+                <div class="yt-play-overlay">
+                  <div class="yt-play-btn"><svg viewBox="0 0 16 16"><polygon points="3,1 15,8 3,15"/></svg></div>
+                </div>
+              </div>
+              <div class="yt-video-title">拿鞭子想被嚴厲斥責？斥責的人是我自己！｜特戰英豪【Crazyface】</div>
+            </div>
+            <div class="yt-video-card" onclick="playVideo(this, 'RmdmHl9C8Uk')">
+              <div class="yt-thumb-wrap">
+                <img src="https://i.ytimg.com/vi/RmdmHl9C8Uk/hqdefault.jpg" alt="淡水帥哥一如既往的又醜又帥操作？｜特戰英豪【Crazyface】" loading="lazy">
+                <div class="yt-play-overlay">
+                  <div class="yt-play-btn"><svg viewBox="0 0 16 16"><polygon points="3,1 15,8 3,15"/></svg></div>
+                </div>
+              </div>
+              <div class="yt-video-title">淡水帥哥一如既往的又醜又帥操作？｜特戰英豪【Crazyface】</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="talent-detail" id="detail-t12">
+      <div class="detail-photo-col"><img class="detail-photo" src="photos/12_niconini.jpg" alt="京野妮子" loading="lazy"></div>
+      <div class="detail-content">
+        <div class="detail-name-zh">京野妮子</div>
+        <div class="detail-tags"><span class="tag">遊戲</span><span class="tag">實況主</span><span class="tag">開箱</span><span class="tag">影音創作者</span></div>
+        <div class="detail-socials">
+          <a href="https://www.twitch.tv/niconini11369" target="_blank" rel="noopener" class="detail-social twitch" aria-label="Twitch" title="Twitch"><svg viewBox="0 0 24 24" fill="currentColor" width="16" height="16"><path d="M11.6 4.3l-7 1V17.5l3.4 1V20l5 .9V19h3l1.8-1.8h2.7l3.5-3.5V4.3H11.6zm9.1 8.7l-2 2h-3.2L13.7 17v-2h-2.6V5.8h9.6V13z"/><path d="M18.4 7.5h-1.3v4h1.3v-4zM15 7.5h-1.3v4H15v-4z"/></svg></a>
+          <a href="https://www.facebook.com/niconini11369" target="_blank" rel="noopener" class="detail-social facebook" aria-label="Facebook" title="Facebook"><svg viewBox="0 0 24 24" fill="currentColor" width="16" height="16"><path d="M14 9h3V5h-3c-2.21 0-4 1.79-4 4v2H7v4h3v8h4v-8h3l1-4h-4V9c0-.55.45-1 1-1z"/></svg></a>
+          <a href="https://www.instagram.com/niconini.11369/" target="_blank" rel="noopener" class="detail-social instagram" aria-label="Instagram" title="Instagram"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" width="16" height="16"><rect x="3" y="3" width="18" height="18" rx="5" ry="5"></rect><circle cx="12" cy="12" r="4"></circle><circle cx="17.5" cy="6.5" r="1" fill="currentColor"></circle></svg></a>
+          <a href="https://www.youtube.com/@niconini11369" target="_blank" rel="noopener" class="detail-social youtube" aria-label="YouTube" title="YouTube"><svg viewBox="0 0 24 24" fill="currentColor" width="16" height="16"><path d="M21.6 7.2c-.2-1-.9-1.7-1.9-1.9C18 5 12 5 12 5s-6 0-7.7.3c-1 .2-1.7.9-1.9 1.9C2 8.9 2 12 2 12s0 3.1.3 4.8c.2 1 .9 1.7 1.9 1.9C5.9 19 12 19 12 19s6.1 0 7.8-.3c1-.2 1.7-.9 1.9-1.9.3-1.7.3-4.8.3-4.8s0-3.1-.4-4.8zM10 15V9l5 3-5 3z"/></svg></a>
+          <a href="https://www.tiktok.com/@niconini11369" target="_blank" rel="noopener" class="detail-social tiktok" aria-label="TikTok" title="TikTok"><svg viewBox="0 0 24 24" fill="currentColor" width="16" height="16"><path d="M19.6 8.3c-1.5 0-3-.5-4.2-1.4v6.4c0 4.3-3.5 7.7-7.8 7.7-1.6 0-3.1-.5-4.4-1.3 1.1.4 2.3.7 3.5.7 4.3 0 7.8-3.5 7.8-7.7V6.5c1.2.9 2.7 1.4 4.2 1.4V8.3zM14.4 5.5c-.6-.7-1-1.6-1.1-2.5h-2v12.4c0 1.6-1.3 2.9-2.9 2.9-.5 0-1-.1-1.4-.4.4 1.1 1.5 1.9 2.7 1.9 1.6 0 2.9-1.3 2.9-2.9V6.2c1.2.9 2.6 1.4 4.2 1.4V5.4c-.8 0-1.6-.2-2.4.1z"/></svg></a>
+        </div>
+        <p class="detail-bio">活躍於 Twitch 的遊戲娛樂型實況主，以自然直率、活潑親切的互動風格深受觀眾喜愛。內容涵蓋遊戲實況、聊天互動、生活企劃與產品開箱，擅長以鮮明個人特色拉近與觀眾的距離，建立高黏著度的社群互動，具備遊戲推廣、品牌合作及影音內容等多元合作彈性。</p>
+        <div class="yt-section">
+          <div class="detail-media-label">FEATURED VIDEOS · 精選影片</div>
+          <div class="yt-videos" id="yt-t12" data-yt-handle="niconini11369" data-yt-fallback="true">
+            <div class="yt-video-card" onclick="playVideo(this, 'iU5sZ33sFxo')">
+              <div class="yt-thumb-wrap">
+                <img src="https://i.ytimg.com/vi/iU5sZ33sFxo/hqdefault.jpg" alt="【京野妮子】包大廚煮三菜一湯菜招待麻吉們 ft.小舞 獅子丸 幻月 大楷 丁亦 | 實況精華" loading="lazy">
+                <div class="yt-play-overlay">
+                  <div class="yt-play-btn"><svg viewBox="0 0 16 16"><polygon points="3,1 15,8 3,15"/></svg></div>
+                </div>
+              </div>
+              <div class="yt-video-title">【京野妮子】包大廚煮三菜一湯菜招待麻吉們 ft.小舞 獅子丸 幻月 大楷 丁亦 | 實況精華</div>
+            </div>
+            <div class="yt-video-card" onclick="playVideo(this, 'qU-CzgxdgXY')">
+              <div class="yt-thumb-wrap">
+                <img src="https://i.ytimg.com/vi/qU-CzgxdgXY/hqdefault.jpg" alt="【京野妮子】瀨戶環奈來啦! 如果不當女優會想當...? | 實況精華" loading="lazy">
+                <div class="yt-play-overlay">
+                  <div class="yt-play-btn"><svg viewBox="0 0 16 16"><polygon points="3,1 15,8 3,15"/></svg></div>
+                </div>
+              </div>
+              <div class="yt-video-title">【京野妮子】瀨戶環奈來啦! 如果不當女優會想當...? | 實況精華</div>
+            </div>
+            <div class="yt-video-card" onclick="playVideo(this, 'S724z33Lot0')">
+              <div class="yt-thumb-wrap">
+                <img src="https://i.ytimg.com/vi/S724z33Lot0/hqdefault.jpg" alt="【京野妮子】開箱vtuber小舞的家! 到處搞破壞差點被趕出去 ft.小舞 | 實況精華" loading="lazy">
+                <div class="yt-play-overlay">
+                  <div class="yt-play-btn"><svg viewBox="0 0 16 16"><polygon points="3,1 15,8 3,15"/></svg></div>
+                </div>
+              </div>
+              <div class="yt-video-title">【京野妮子】開箱vtuber小舞的家! 到處搞破壞差點被趕出去 ft.小舞 | 實況精華</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="talent-detail" id="detail-t2">
+      <div class="detail-photo-col"><img class="detail-photo" src="photos/02_goodson.jpg" alt="乖兒子 GoodSon" loading="lazy"></div>
+      <div class="detail-content">
+        <div class="detail-name-zh">乖兒子 GoodSon</div>
+        <div class="detail-tags"><span class="tag">遊戲</span><span class="tag">實況主</span><span class="tag">開箱</span><span class="tag">影音創作者</span></div>
+                        <div class="detail-socials">
+          <a href="https://www.facebook.com/GoodSon0706" target="_blank" rel="noopener" class="detail-social facebook" aria-label="Facebook" title="Facebook"><svg viewBox="0 0 24 24" fill="currentColor" width="16" height="16"><path d="M14 9h3V5h-3c-2.21 0-4 1.79-4 4v2H7v4h3v8h4v-8h3l1-4h-4V9c0-.55.45-1 1-1z"/></svg></a>
+          <a href="https://www.youtube.com/@goodson0706" target="_blank" rel="noopener" class="detail-social youtube" aria-label="YouTube" title="YouTube"><svg viewBox="0 0 24 24" fill="currentColor" width="16" height="16"><path d="M21.6 7.2c-.2-1-.9-1.7-1.9-1.9C18 5 12 5 12 5s-6 0-7.7.3c-1 .2-1.7.9-1.9 1.9C2 8.9 2 12 2 12s0 3.1.3 4.8c.2 1 .9 1.7 1.9 1.9C5.9 19 12 19 12 19s6.1 0 7.8-.3c1-.2 1.7-.9 1.9-1.9.3-1.7.3-4.8.3-4.8s0-3.1-.4-4.8zM10 15V9l5 3-5 3z"/></svg></a>
+          <a href="https://www.twitch.tv/goodson0706" target="_blank" rel="noopener" class="detail-social twitch" aria-label="Twitch" title="Twitch"><svg viewBox="0 0 24 24" fill="currentColor" width="16" height="16"><path d="M11.6 4.3l-7 1V17.5l3.4 1V20l5 .9V19h3l1.8-1.8h2.7l3.5-3.5V4.3H11.6zm9.1 8.7l-2 2h-3.2L13.7 17v-2h-2.6V5.8h9.6V13z"/><path d="M18.4 7.5h-1.3v4h1.3v-4zM15 7.5h-1.3v4H15v-4z"/></svg></a>
+          <a href="https://www.instagram.com/goodson0706" target="_blank" rel="noopener" class="detail-social instagram" aria-label="Instagram" title="Instagram"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" width="16" height="16"><rect x="3" y="3" width="18" height="18" rx="5" ry="5"></rect><circle cx="12" cy="12" r="4"></circle><circle cx="17.5" cy="6.5" r="1" fill="currentColor"></circle></svg></a>
+          <a href="http://tiktok.com/@goodson0706" target="_blank" rel="noopener" class="detail-social tiktok" aria-label="TikTok" title="TikTok"><svg viewBox="0 0 24 24" fill="currentColor" width="16" height="16"><path d="M19.6 8.3c-1.5 0-3-.5-4.2-1.4v6.4c0 4.3-3.5 7.7-7.8 7.7-1.6 0-3.1-.5-4.4-1.3 1.1.4 2.3.7 3.5.7 4.3 0 7.8-3.5 7.8-7.7V6.5c1.2.9 2.7 1.4 4.2 1.4V8.3zM14.4 5.5c-.6-.7-1-1.6-1.1-2.5h-2v12.4c0 1.6-1.3 2.9-2.9 2.9-.5 0-1-.1-1.4-.4.4 1.1 1.5 1.9 2.7 1.9 1.6 0 2.9-1.3 2.9-2.9V6.2c1.2.9 2.6 1.4 4.2 1.4V5.4c-.8 0-1.6-.2-2.4.1z"/></svg></a>
+        </div>
+        <p class="detail-bio">遊戲與生活型創作者，以親民自然、幽默搞笑的個人特色深受粉絲喜愛。內容涵蓋遊戲體驗、3C 科技、生活開箱及品牌合作，擅長透過真實體驗分享建立觀眾信任感，擁有高互動率與強大粉絲黏著度。</p>
+        <div class="yt-section">
+          <div class="detail-media-label">LATEST VIDEOS · 最新影片</div>
+          <div class="yt-videos" id="yt-t2" data-yt-handle="goodson0706">
+            <div class="yt-loading">載入中...</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="talent-detail" id="detail-t3">
+      <div class="detail-photo-col"><img class="detail-photo" src="photos/03_luyee.jpg" alt="嚕乙 Luyee" loading="lazy"></div>
+      <div class="detail-content">
+        <div class="detail-name-zh">嚕乙 Luyee</div>
+        <div class="detail-tags"><span class="tag">遊戲</span><span class="tag">實況主</span><span class="tag">開箱</span><span class="tag">影音創作者</span></div>
+                        <div class="detail-socials">
+          <a href="https://www.youtube.com/@luyee_1004" target="_blank" rel="noopener" class="detail-social youtube" aria-label="YouTube" title="YouTube"><svg viewBox="0 0 24 24" fill="currentColor" width="16" height="16"><path d="M21.6 7.2c-.2-1-.9-1.7-1.9-1.9C18 5 12 5 12 5s-6 0-7.7.3c-1 .2-1.7.9-1.9 1.9C2 8.9 2 12 2 12s0 3.1.3 4.8c.2 1 .9 1.7 1.9 1.9C5.9 19 12 19 12 19s6.1 0 7.8-.3c1-.2 1.7-.9 1.9-1.9.3-1.7.3-4.8.3-4.8s0-3.1-.4-4.8zM10 15V9l5 3-5 3z"/></svg></a>
+          <a href="https://www.twitch.tv/luyee_1004" target="_blank" rel="noopener" class="detail-social twitch" aria-label="Twitch" title="Twitch"><svg viewBox="0 0 24 24" fill="currentColor" width="16" height="16"><path d="M11.6 4.3l-7 1V17.5l3.4 1V20l5 .9V19h3l1.8-1.8h2.7l3.5-3.5V4.3H11.6zm9.1 8.7l-2 2h-3.2L13.7 17v-2h-2.6V5.8h9.6V13z"/><path d="M18.4 7.5h-1.3v4h1.3v-4zM15 7.5h-1.3v4H15v-4z"/></svg></a>
+          <a href="https://www.instagram.com/luyee_10.04/" target="_blank" rel="noopener" class="detail-social instagram" aria-label="Instagram" title="Instagram"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" width="16" height="16"><rect x="3" y="3" width="18" height="18" rx="5" ry="5"></rect><circle cx="12" cy="12" r="4"></circle><circle cx="17.5" cy="6.5" r="1" fill="currentColor"></circle></svg></a>
+        </div>
+        <p class="detail-bio">遊戲與生活內容創作者，形象自然親切，擁有良好的粉絲互動能力。內容涵蓋遊戲實況、日常分享及品牌合作，擅長以真實生活視角創造共鳴，建立高信任度的社群關係。</p>
+        <div class="yt-section">
+          <div class="detail-media-label">LATEST VIDEOS · 最新影片</div>
+          <div class="yt-videos" id="yt-t3" data-yt-handle="luyee_1004">
+            <div class="yt-loading">載入中...</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="talent-detail" id="detail-t4">
+      <div class="detail-photo-col"><img class="detail-photo" src="photos/04_rex.jpg" alt="雷克獅 Rex" loading="lazy"></div>
+      <div class="detail-content">
+        <div class="detail-name-zh">雷克獅 Rex</div>
+        <div class="detail-tags"><span class="tag">遊戲</span><span class="tag">實況主</span><span class="tag">主播賽評</span><span class="tag">主持人</span></div>
+                        <div class="detail-socials">
+          <a href="https://www.facebook.com/rexesportlife" target="_blank" rel="noopener" class="detail-social facebook" aria-label="Facebook" title="Facebook"><svg viewBox="0 0 24 24" fill="currentColor" width="16" height="16"><path d="M14 9h3V5h-3c-2.21 0-4 1.79-4 4v2H7v4h3v8h4v-8h3l1-4h-4V9c0-.55.45-1 1-1z"/></svg></a>
+          <a href="https://www.youtube.com/@rexderyt" target="_blank" rel="noopener" class="detail-social youtube" aria-label="YouTube" title="YouTube"><svg viewBox="0 0 24 24" fill="currentColor" width="16" height="16"><path d="M21.6 7.2c-.2-1-.9-1.7-1.9-1.9C18 5 12 5 12 5s-6 0-7.7.3c-1 .2-1.7.9-1.9 1.9C2 8.9 2 12 2 12s0 3.1.3 4.8c.2 1 .9 1.7 1.9 1.9C5.9 19 12 19 12 19s6.1 0 7.8-.3c1-.2 1.7-.9 1.9-1.9.3-1.7.3-4.8.3-4.8s0-3.1-.4-4.8zM10 15V9l5 3-5 3z"/></svg></a>
+          <a href="https://www.twitch.tv/rexlin777" target="_blank" rel="noopener" class="detail-social twitch" aria-label="Twitch" title="Twitch"><svg viewBox="0 0 24 24" fill="currentColor" width="16" height="16"><path d="M11.6 4.3l-7 1V17.5l3.4 1V20l5 .9V19h3l1.8-1.8h2.7l3.5-3.5V4.3H11.6zm9.1 8.7l-2 2h-3.2L13.7 17v-2h-2.6V5.8h9.6V13z"/><path d="M18.4 7.5h-1.3v4h1.3v-4zM15 7.5h-1.3v4H15v-4z"/></svg></a>
+          <a href="https://www.instagram.com/rexderig/" target="_blank" rel="noopener" class="detail-social instagram" aria-label="Instagram" title="Instagram"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" width="16" height="16"><rect x="3" y="3" width="18" height="18" rx="5" ry="5"></rect><circle cx="12" cy="12" r="4"></circle><circle cx="17.5" cy="6.5" r="1" fill="currentColor"></circle></svg></a>
+        </div>
+        <p class="detail-bio">電競主播、賽評及活動主持人，擁有豐富大型賽事與品牌活動經驗。以自信熱血的風格與穩健台風著稱，擅長帶動現場氣氛與串聯觀眾情緒，是兼具專業度與娛樂性的全方位主持人才。</p>
+        <div class="yt-section">
+          <div class="detail-media-label">LATEST VIDEOS · 最新影片</div>
+          <div class="yt-videos" id="yt-t4" data-yt-handle="rexderyt">
+            <div class="yt-loading">載入中...</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="talent-detail" id="detail-t5">
+      <div class="detail-photo-col"><img class="detail-photo" src="photos/05_kmomo.jpg" alt="許摸摸 Kmomo" loading="lazy"></div>
+      <div class="detail-content">
+        <div class="detail-name-zh">許摸摸 Kmomo</div>
+        <div class="detail-tags"><span class="tag">遊戲</span><span class="tag">實況主</span><span class="tag">退役電競選手</span><span class="tag">主播賽評</span></div>
+                        <div class="detail-socials">
+          <a href="https://www.facebook.com/KMOMO512" target="_blank" rel="noopener" class="detail-social facebook" aria-label="Facebook" title="Facebook"><svg viewBox="0 0 24 24" fill="currentColor" width="16" height="16"><path d="M14 9h3V5h-3c-2.21 0-4 1.79-4 4v2H7v4h3v8h4v-8h3l1-4h-4V9c0-.55.45-1 1-1z"/></svg></a>
+          <a href="https://www.youtube.com/@kmomo0512" target="_blank" rel="noopener" class="detail-social youtube" aria-label="YouTube" title="YouTube"><svg viewBox="0 0 24 24" fill="currentColor" width="16" height="16"><path d="M21.6 7.2c-.2-1-.9-1.7-1.9-1.9C18 5 12 5 12 5s-6 0-7.7.3c-1 .2-1.7.9-1.9 1.9C2 8.9 2 12 2 12s0 3.1.3 4.8c.2 1 .9 1.7 1.9 1.9C5.9 19 12 19 12 19s6.1 0 7.8-.3c1-.2 1.7-.9 1.9-1.9.3-1.7.3-4.8.3-4.8s0-3.1-.4-4.8zM10 15V9l5 3-5 3z"/></svg></a>
+          <a href="https://www.twitch.tv/kmomo_0512" target="_blank" rel="noopener" class="detail-social twitch" aria-label="Twitch" title="Twitch"><svg viewBox="0 0 24 24" fill="currentColor" width="16" height="16"><path d="M11.6 4.3l-7 1V17.5l3.4 1V20l5 .9V19h3l1.8-1.8h2.7l3.5-3.5V4.3H11.6zm9.1 8.7l-2 2h-3.2L13.7 17v-2h-2.6V5.8h9.6V13z"/><path d="M18.4 7.5h-1.3v4h1.3v-4zM15 7.5h-1.3v4H15v-4z"/></svg></a>
+          <a href="https://www.instagram.com/kmomo0512" target="_blank" rel="noopener" class="detail-social instagram" aria-label="Instagram" title="Instagram"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" width="16" height="16"><rect x="3" y="3" width="18" height="18" rx="5" ry="5"></rect><circle cx="12" cy="12" r="4"></circle><circle cx="17.5" cy="6.5" r="1" fill="currentColor"></circle></svg></a>
+          <a href="https://www.tiktok.com/@kmomo_0512" target="_blank" rel="noopener" class="detail-social tiktok" aria-label="TikTok" title="TikTok"><svg viewBox="0 0 24 24" fill="currentColor" width="16" height="16"><path d="M19.6 8.3c-1.5 0-3-.5-4.2-1.4v6.4c0 4.3-3.5 7.7-7.8 7.7-1.6 0-3.1-.5-4.4-1.3 1.1.4 2.3.7 3.5.7 4.3 0 7.8-3.5 7.8-7.7V6.5c1.2.9 2.7 1.4 4.2 1.4V8.3zM14.4 5.5c-.6-.7-1-1.6-1.1-2.5h-2v12.4c0 1.6-1.3 2.9-2.9 2.9-.5 0-1-.1-1.4-.4.4 1.1 1.5 1.9 2.7 1.9 1.6 0 2.9-1.3 2.9-2.9V6.2c1.2.9 2.6 1.4 4.2 1.4V5.4c-.8 0-1.6-.2-2.4.1z"/></svg></a>
+        </div>
+        <p class="detail-bio">前《Overwatch》職業電競選手，現為賽事主播、賽評及遊戲實況主。擁有深厚的競技遊戲背景與專業分析能力，內容兼具專業性與娛樂性，深受核心玩家與電競族群喜愛。</p>
+        <div class="yt-section">
+          <div class="detail-media-label">LATEST VIDEOS · 最新影片</div>
+          <div class="yt-videos" id="yt-t5" data-yt-handle="kmomo0512">
+            <div class="yt-loading">載入中...</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="talent-detail" id="detail-t6">
+      <div class="detail-photo-col"><img class="detail-photo" src="photos/06_ppdbj.jpg" alt="佩佩豬伯爵 PpdbJ" loading="lazy"></div>
+      <div class="detail-content">
+        <div class="detail-name-zh">佩佩豬伯爵 PpdbJ</div>
+        <div class="detail-tags"><span class="tag">遊戲</span><span class="tag">實況主</span><span class="tag">主播賽評</span><span class="tag">主持人</span><span class="tag">開箱</span><span class="tag">影音創作者</span></div>
+                        <div class="detail-socials">
+          <a href="https://www.facebook.com/profile.php?id=100065295348339" target="_blank" rel="noopener" class="detail-social facebook" aria-label="Facebook" title="Facebook"><svg viewBox="0 0 24 24" fill="currentColor" width="16" height="16"><path d="M14 9h3V5h-3c-2.21 0-4 1.79-4 4v2H7v4h3v8h4v-8h3l1-4h-4V9c0-.55.45-1 1-1z"/></svg></a>
+          <a href="https://www.youtube.com/@PpdbJ0320" target="_blank" rel="noopener" class="detail-social youtube" aria-label="YouTube" title="YouTube"><svg viewBox="0 0 24 24" fill="currentColor" width="16" height="16"><path d="M21.6 7.2c-.2-1-.9-1.7-1.9-1.9C18 5 12 5 12 5s-6 0-7.7.3c-1 .2-1.7.9-1.9 1.9C2 8.9 2 12 2 12s0 3.1.3 4.8c.2 1 .9 1.7 1.9 1.9C5.9 19 12 19 12 19s6.1 0 7.8-.3c1-.2 1.7-.9 1.9-1.9.3-1.7.3-4.8.3-4.8s0-3.1-.4-4.8zM10 15V9l5 3-5 3z"/></svg></a>
+          <a href="https://www.twitch.tv/ppdbj" target="_blank" rel="noopener" class="detail-social twitch" aria-label="Twitch" title="Twitch"><svg viewBox="0 0 24 24" fill="currentColor" width="16" height="16"><path d="M11.6 4.3l-7 1V17.5l3.4 1V20l5 .9V19h3l1.8-1.8h2.7l3.5-3.5V4.3H11.6zm9.1 8.7l-2 2h-3.2L13.7 17v-2h-2.6V5.8h9.6V13z"/><path d="M18.4 7.5h-1.3v4h1.3v-4zM15 7.5h-1.3v4H15v-4z"/></svg></a>
+          <a href="https://www.instagram.com/ppdbj0320/" target="_blank" rel="noopener" class="detail-social instagram" aria-label="Instagram" title="Instagram"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" width="16" height="16"><rect x="3" y="3" width="18" height="18" rx="5" ry="5"></rect><circle cx="12" cy="12" r="4"></circle><circle cx="17.5" cy="6.5" r="1" fill="currentColor"></circle></svg></a>
+          <a href="https://www.tiktok.com/@ppdbj" target="_blank" rel="noopener" class="detail-social tiktok" aria-label="TikTok" title="TikTok"><svg viewBox="0 0 24 24" fill="currentColor" width="16" height="16"><path d="M19.6 8.3c-1.5 0-3-.5-4.2-1.4v6.4c0 4.3-3.5 7.7-7.8 7.7-1.6 0-3.1-.5-4.4-1.3 1.1.4 2.3.7 3.5.7 4.3 0 7.8-3.5 7.8-7.7V6.5c1.2.9 2.7 1.4 4.2 1.4V8.3zM14.4 5.5c-.6-.7-1-1.6-1.1-2.5h-2v12.4c0 1.6-1.3 2.9-2.9 2.9-.5 0-1-.1-1.4-.4.4 1.1 1.5 1.9 2.7 1.9 1.6 0 2.9-1.3 2.9-2.9V6.2c1.2.9 2.6 1.4 4.2 1.4V5.4c-.8 0-1.6-.2-2.4.1z"/></svg></a>
+        </div>
+        <p class="detail-bio">前《特戰英豪 VALORANT》職業選手，現為賽事賽評、教練及活動主持人。具備專業競技背景與優秀口條能力，擅長品牌活動主持、電競賽事轉播、遊戲內容推廣及現場互動，兼具專業形象與娛樂效果。</p>
+        <div class="yt-section">
+          <div class="detail-media-label">LATEST VIDEOS · 最新影片</div>
+          <div class="yt-videos" id="yt-t6" data-yt-handle="PpdbJ0320">
+            <div class="yt-loading">載入中...</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="talent-detail" id="detail-t7">
+      <div class="detail-photo-col"><img class="detail-photo" src="photos/07_a1chen.jpg" alt="小三登" loading="lazy"></div>
+      <div class="detail-content">
+        <div class="detail-name-zh">小三登</div>
+        <div class="detail-tags"><span class="tag">遊戲</span><span class="tag">實況主</span><span class="tag">開箱</span><span class="tag">影音創作者</span></div>
+                        <div class="detail-socials">
+          <a href="https://www.youtube.com/@a1chenb" target="_blank" rel="noopener" class="detail-social youtube" aria-label="YouTube" title="YouTube"><svg viewBox="0 0 24 24" fill="currentColor" width="16" height="16"><path d="M21.6 7.2c-.2-1-.9-1.7-1.9-1.9C18 5 12 5 12 5s-6 0-7.7.3c-1 .2-1.7.9-1.9 1.9C2 8.9 2 12 2 12s0 3.1.3 4.8c.2 1 .9 1.7 1.9 1.9C5.9 19 12 19 12 19s6.1 0 7.8-.3c1-.2 1.7-.9 1.9-1.9.3-1.7.3-4.8.3-4.8s0-3.1-.4-4.8zM10 15V9l5 3-5 3z"/></svg></a>
+          <a href="https://www.twitch.tv/a1chenb" target="_blank" rel="noopener" class="detail-social twitch" aria-label="Twitch" title="Twitch"><svg viewBox="0 0 24 24" fill="currentColor" width="16" height="16"><path d="M11.6 4.3l-7 1V17.5l3.4 1V20l5 .9V19h3l1.8-1.8h2.7l3.5-3.5V4.3H11.6zm9.1 8.7l-2 2h-3.2L13.7 17v-2h-2.6V5.8h9.6V13z"/><path d="M18.4 7.5h-1.3v4h1.3v-4zM15 7.5h-1.3v4H15v-4z"/></svg></a>
+          <a href="https://www.instagram.com/1chen.20/" target="_blank" rel="noopener" class="detail-social instagram" aria-label="Instagram" title="Instagram"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" width="16" height="16"><rect x="3" y="3" width="18" height="18" rx="5" ry="5"></rect><circle cx="12" cy="12" r="4"></circle><circle cx="17.5" cy="6.5" r="1" fill="currentColor"></circle></svg></a>
+        </div>
+        <p class="detail-bio">新生代遊戲娛樂創作者，以自然真誠、不做作的互動風格累積穩定觀眾群。內容橫跨遊戲實況、生活分享與 3C 科技開箱，擅長打造貼近年輕族群的話題內容，具備良好的成長潛力與品牌合作彈性。</p>
+        <div class="yt-section">
+          <div class="detail-media-label">LATEST VIDEOS · 最新影片</div>
+          <div class="yt-videos" id="yt-t7" data-yt-handle="a1chenb">
+            <div class="yt-loading">載入中...</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="talent-detail" id="detail-t8">
+      <div class="detail-photo-col"><img class="detail-photo" src="photos/08_xiaolin.jpg" alt="小霖 XiaoLin" loading="lazy"></div>
+      <div class="detail-content">
+        <div class="detail-name-zh">小霖 XiaoLin</div>
+        <div class="detail-tags"><span class="tag">遊戲</span><span class="tag">實況主</span></div>
+                        <div class="detail-socials">
+          <a href="https://www.facebook.com/HKA-XiaoLin-285843085263893" target="_blank" rel="noopener" class="detail-social facebook" aria-label="Facebook" title="Facebook"><svg viewBox="0 0 24 24" fill="currentColor" width="16" height="16"><path d="M14 9h3V5h-3c-2.21 0-4 1.79-4 4v2H7v4h3v8h4v-8h3l1-4h-4V9c0-.55.45-1 1-1z"/></svg></a>
+          <a href="https://www.youtube.com/@XiaoLin1122" target="_blank" rel="noopener" class="detail-social youtube" aria-label="YouTube" title="YouTube"><svg viewBox="0 0 24 24" fill="currentColor" width="16" height="16"><path d="M21.6 7.2c-.2-1-.9-1.7-1.9-1.9C18 5 12 5 12 5s-6 0-7.7.3c-1 .2-1.7.9-1.9 1.9C2 8.9 2 12 2 12s0 3.1.3 4.8c.2 1 .9 1.7 1.9 1.9C5.9 19 12 19 12 19s6.1 0 7.8-.3c1-.2 1.7-.9 1.9-1.9.3-1.7.3-4.8.3-4.8s0-3.1-.4-4.8zM10 15V9l5 3-5 3z"/></svg></a>
+          <a href="https://www.instagram.com/xiaolin_1122/" target="_blank" rel="noopener" class="detail-social instagram" aria-label="Instagram" title="Instagram"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" width="16" height="16"><rect x="3" y="3" width="18" height="18" rx="5" ry="5"></rect><circle cx="12" cy="12" r="4"></circle><circle cx="17.5" cy="6.5" r="1" fill="currentColor"></circle></svg></a>
+          <a href="https://www.tiktok.com/@xiaolin1122" target="_blank" rel="noopener" class="detail-social tiktok" aria-label="TikTok" title="TikTok"><svg viewBox="0 0 24 24" fill="currentColor" width="16" height="16"><path d="M19.6 8.3c-1.5 0-3-.5-4.2-1.4v6.4c0 4.3-3.5 7.7-7.8 7.7-1.6 0-3.1-.5-4.4-1.3 1.1.4 2.3.7 3.5.7 4.3 0 7.8-3.5 7.8-7.7V6.5c1.2.9 2.7 1.4 4.2 1.4V8.3zM14.4 5.5c-.6-.7-1-1.6-1.1-2.5h-2v12.4c0 1.6-1.3 2.9-2.9 2.9-.5 0-1-.1-1.4-.4.4 1.1 1.5 1.9 2.7 1.9 1.6 0 2.9-1.3 2.9-2.9V6.2c1.2.9 2.6 1.4 4.2 1.4V5.4c-.8 0-1.6-.2-2.4.1z"/></svg></a>
+        </div>
+        <p class="detail-bio">前《Garena 傳說對決》職業電競選手兼遊戲實況主，以幽默風趣且極具個人特色的直播風格受到粉絲喜愛。擅長結合高端操作與娛樂效果，透過鮮明梗文化與自然互動建立高度黏著的粉絲社群，在年輕遊戲族群中擁有穩定影響力。</p>
+        <div class="yt-section">
+          <div class="detail-media-label">LATEST VIDEOS · 最新影片</div>
+          <div class="yt-videos" id="yt-t8" data-yt-handle="XiaoLin1122">
+            <div class="yt-loading">載入中...</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="talent-detail" id="detail-t9">
+      <div class="detail-photo-col"><img class="detail-photo" src="photos/09_wuwei.jpg" alt="WuWei 無為" loading="lazy"></div>
+      <div class="detail-content">
+        <div class="detail-name-zh">WuWei 無為</div>
+        <div class="detail-tags"><span class="tag">遊戲</span><span class="tag">實況</span><span class="tag">開箱</span><span class="tag">影音創作者</span></div>
+                        <div class="detail-socials">
+          <a href="http://facebook.com/wuweigaming" target="_blank" rel="noopener" class="detail-social facebook" aria-label="Facebook" title="Facebook"><svg viewBox="0 0 24 24" fill="currentColor" width="16" height="16"><path d="M14 9h3V5h-3c-2.21 0-4 1.79-4 4v2H7v4h3v8h4v-8h3l1-4h-4V9c0-.55.45-1 1-1z"/></svg></a>
+          <a href="https://www.youtube.com/@WuWei" target="_blank" rel="noopener" class="detail-social youtube" aria-label="YouTube" title="YouTube"><svg viewBox="0 0 24 24" fill="currentColor" width="16" height="16"><path d="M21.6 7.2c-.2-1-.9-1.7-1.9-1.9C18 5 12 5 12 5s-6 0-7.7.3c-1 .2-1.7.9-1.9 1.9C2 8.9 2 12 2 12s0 3.1.3 4.8c.2 1 .9 1.7 1.9 1.9C5.9 19 12 19 12 19s6.1 0 7.8-.3c1-.2 1.7-.9 1.9-1.9.3-1.7.3-4.8.3-4.8s0-3.1-.4-4.8zM10 15V9l5 3-5 3z"/></svg></a>
+          <a href="https://www.tiktok.com/@wuwei19970418" target="_blank" rel="noopener" class="detail-social tiktok" aria-label="TikTok" title="TikTok"><svg viewBox="0 0 24 24" fill="currentColor" width="16" height="16"><path d="M19.6 8.3c-1.5 0-3-.5-4.2-1.4v6.4c0 4.3-3.5 7.7-7.8 7.7-1.6 0-3.1-.5-4.4-1.3 1.1.4 2.3.7 3.5.7 4.3 0 7.8-3.5 7.8-7.7V6.5c1.2.9 2.7 1.4 4.2 1.4V8.3zM14.4 5.5c-.6-.7-1-1.6-1.1-2.5h-2v12.4c0 1.6-1.3 2.9-2.9 2.9-.5 0-1-.1-1.4-.4.4 1.1 1.5 1.9 2.7 1.9 1.6 0 2.9-1.3 2.9-2.9V6.2c1.2.9 2.6 1.4 4.2 1.4V5.4c-.8 0-1.6-.2-2.4.1z"/></svg></a>
+        </div>
+        <p class="detail-bio">以 FPS 遊戲內容起家，兼具遊戲實況、產品開箱與娛樂互動等多元創作類型。憑藉直率自然、幽默接地氣的表達風格，成功累積忠實觀眾群。內容涵蓋熱門遊戲體驗、3C 周邊開箱及生活分享，擁有穩定的社群影響力與粉絲黏著度。</p>
+        <div class="yt-section">
+          <div class="detail-media-label">LATEST VIDEOS · 最新影片</div>
+          <div class="yt-videos" id="yt-t9" data-yt-handle="WuWei">
+            <div class="yt-loading">載入中...</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="talent-detail" id="detail-t10">
+      <div class="detail-photo-col"><img class="detail-photo" src="photos/10_ms.jpg" alt="肥宅MS" loading="lazy"></div>
+      <div class="detail-content">
+        <div class="detail-name-zh">肥宅MS</div>
+        <div class="detail-tags"><span class="tag">遊戲</span><span class="tag">動漫</span><span class="tag">ACG</span><span class="tag">影音創作者</span></div>
+                        <div class="detail-socials">
+          <a href="https://www.facebook.com/ms0437724" target="_blank" rel="noopener" class="detail-social facebook" aria-label="Facebook" title="Facebook"><svg viewBox="0 0 24 24" fill="currentColor" width="16" height="16"><path d="M14 9h3V5h-3c-2.21 0-4 1.79-4 4v2H7v4h3v8h4v-8h3l1-4h-4V9c0-.55.45-1 1-1z"/></svg></a>
+          <a href="https://www.youtube.com/@otakumsvideo" target="_blank" rel="noopener" class="detail-social youtube" aria-label="YouTube" title="YouTube"><svg viewBox="0 0 24 24" fill="currentColor" width="16" height="16"><path d="M21.6 7.2c-.2-1-.9-1.7-1.9-1.9C18 5 12 5 12 5s-6 0-7.7.3c-1 .2-1.7.9-1.9 1.9C2 8.9 2 12 2 12s0 3.1.3 4.8c.2 1 .9 1.7 1.9 1.9C5.9 19 12 19 12 19s6.1 0 7.8-.3c1-.2 1.7-.9 1.9-1.9.3-1.7.3-4.8.3-4.8s0-3.1-.4-4.8zM10 15V9l5 3-5 3z"/></svg></a>
+          <a href="https://www.instagram.com/feizhaims/" target="_blank" rel="noopener" class="detail-social instagram" aria-label="Instagram" title="Instagram"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" width="16" height="16"><rect x="3" y="3" width="18" height="18" rx="5" ry="5"></rect><circle cx="12" cy="12" r="4"></circle><circle cx="17.5" cy="6.5" r="1" fill="currentColor"></circle></svg></a>
+        </div>
+        <p class="detail-bio">以獨樹一幟的說書風格深受觀眾喜愛，長期深耕動漫、ACG 文化與遊戲相關內容。擅長將複雜的作品背景、角色設定與劇情脈絡轉化為生動易懂的敘事內容，兼具娛樂性與資訊深度。內容涵蓋動漫解析、遊戲體驗、熱門話題討論及社群互動，累積穩定且高黏著度的核心粉絲族群。</p>
+        <div class="yt-section">
+          <div class="detail-media-label">LATEST VIDEOS · 最新影片</div>
+          <div class="yt-videos" id="yt-t10" data-yt-handle="otakumsvideo">
+            <div class="yt-loading">載入中...</div>
+          </div>
+        </div>
+      </div>
+    </div>
+    </div>
+  </div>
+</div>
+
+<script>
+  // ─── Hamburger menu ───
+  function toggleMenu() {
+    const btn = document.getElementById('hamburger');
+    const menu = document.getElementById('mobileMenu');
+    btn.classList.toggle('open');
+    menu.classList.toggle('open');
+  }
+
+  function closeMenu() {
+    document.getElementById('hamburger').classList.remove('open');
+    document.getElementById('mobileMenu').classList.remove('open');
+  }
+
+  // ─── Talent cards ───
+  let currentOpen = null;
+
+  // ─── YouTube Worker endpoint ───
+  const YT_WORKER_URL = 'https://pinkie-yt.bella182399.workers.dev';
+
+  // 已載入的影片資料快取（同一次造訪不重抓）
+  const ytCache = {};
+  const ytRefreshPending = {};
+
+  async function loadYouTubeVideos(talentId) {
+    const container = document.getElementById('yt-' + talentId);
+    if (!container) return;
+    const handle = container.dataset.ytHandle;
+    if (!handle) return;
+
+    // 新增頻道以 handle 查詢現有 Worker；成功後切換成最新三支。
+    if (container.dataset.ytFallback === 'true') {
+      await refreshSeededYouTubeVideos(container, talentId);
+      return;
+    }
+
+    // 已載入過，跳過
+    if (ytCache[talentId]) {
+      renderVideos(container, ytCache[talentId]);
+      return;
+    }
+
+    try {
+      const res = await fetch(`${YT_WORKER_URL}/?talent=${encodeURIComponent(talentId)}`);
+      if (!res.ok) throw new Error('HTTP ' + res.status);
+      const data = await res.json();
+      if (data.error) throw new Error(data.error);
+
+      ytCache[talentId] = data.videos;
+      renderVideos(container, data.videos);
+    } catch (err) {
+      container.innerHTML = `<div class="yt-error">影片載入失敗：${err.message}</div>`;
+    }
+  }
+
+  async function refreshSeededYouTubeVideos(container, talentId) {
+    const label = container.closest('.yt-section').querySelector('.detail-media-label');
+    if (ytCache[talentId]) {
+      renderVideos(container, ytCache[talentId]);
+      label.textContent = 'LATEST VIDEOS · 最新影片';
+      return;
+    }
+    if (ytRefreshPending[talentId]) return ytRefreshPending[talentId];
+
+    const controller = new AbortController();
+    const timeout = setTimeout(() => controller.abort(), 8000);
+    ytRefreshPending[talentId] = (async () => {
+      try {
+        const res = await fetch(`${YT_WORKER_URL}/?handle=${encodeURIComponent(container.dataset.ytHandle)}`, {
+          signal: controller.signal
+        });
+        if (!res.ok) throw new Error('HTTP ' + res.status);
+        const data = await res.json();
+        if (data.error || !Array.isArray(data.videos)) throw new Error('Invalid video data');
+        const videos = data.videos.filter(v => v &&
+          /^[A-Za-z0-9_-]{11}$/.test(v.videoId) &&
+          typeof v.title === 'string' && typeof v.thumbnail === 'string' &&
+          /^https:\/\//.test(v.thumbnail)
+        ).slice(0, 3);
+        if (videos.length !== 3) throw new Error('Expected three public videos');
+        ytCache[talentId] = videos;
+        renderVideos(container, videos);
+        label.textContent = 'LATEST VIDEOS · 最新影片';
+      } catch (err) {
+        // API 暫時無法連線時，保留現有三支影片。
+      } finally {
+        clearTimeout(timeout);
+        delete ytRefreshPending[talentId];
+      }
+    })();
+    return ytRefreshPending[talentId];
+  }
+
+  function renderVideos(container, videos) {
+    if (!videos || videos.length === 0) {
+      container.innerHTML = '<div class="yt-loading">此頻道暫無公開影片</div>';
+      return;
+    }
+    container.innerHTML = videos.map(v => `
+      <div class="yt-video-card" onclick="playVideo(this, '${v.videoId}')">
+        <div class="yt-thumb-wrap">
+          <img src="${v.thumbnail}" alt="${escapeHtml(v.title)}" loading="lazy">
+          <div class="yt-play-overlay">
+            <div class="yt-play-btn">
+              <svg viewBox="0 0 16 16"><polygon points="3,1 15,8 3,15"/></svg>
+            </div>
+          </div>
+        </div>
+        <div class="yt-video-title">${escapeHtml(v.title)}</div>
+      </div>
+    `).join('');
+  }
+
+  function playVideo(cardEl, videoId) {
+    const wrap = cardEl.querySelector('.yt-thumb-wrap');
+    wrap.innerHTML = `<iframe src="https://www.youtube.com/embed/${videoId}?autoplay=1&rel=0" allow="autoplay; encrypted-media; picture-in-picture" allowfullscreen></iframe>`;
+    cardEl.onclick = null;
+  }
+
+  function escapeHtml(s) {
+    return String(s).replace(/[&<>"']/g, c => ({
+      '&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'
+    }[c]));
+  }
+
+  function toggleTalent(id, cardEl) {
+    const detail = document.getElementById('detail-' + id);
+    const modal = document.getElementById('talentModal');
+    const allCards = document.querySelectorAll('.talent-card');
+    const allDetails = document.querySelectorAll('.talent-detail');
+
+    // Hide all details first
+    allDetails.forEach(d => d.classList.remove('show'));
+    allCards.forEach(c => c.classList.remove('active'));
+
+    // Show target detail
+    detail.classList.add('show');
+    cardEl.classList.add('active');
+    currentOpen = id;
+
+    // Open modal
+    modal.classList.add('open');
+    modal.setAttribute('aria-hidden', 'false');
+    document.body.classList.add('modal-open');
+
+    // Reset modal scroll to top
+    const container = modal.querySelector('.talent-modal-container');
+    if (container) container.scrollTop = 0;
+
+    // 觸發 YouTube 影片載入
+    loadYouTubeVideos(id);
+  }
+
+  function closeTalentModal() {
+    const modal = document.getElementById('talentModal');
+    const allCards = document.querySelectorAll('.talent-card');
+    const allDetails = document.querySelectorAll('.talent-detail');
+
+    modal.classList.remove('open');
+    modal.setAttribute('aria-hidden', 'true');
+    document.body.classList.remove('modal-open');
+
+    // Clear active state
+    allCards.forEach(c => c.classList.remove('active'));
+    allDetails.forEach(d => d.classList.remove('show'));
+    currentOpen = null;
+  }
+
+  // Keep closeTalent for backward compatibility (used by inline onclick if any)
+  function closeTalent(id) {
+    closeTalentModal();
+  }
+
+  // 切換到上一位 / 下一位 KOL
+  function navTalent(direction) {
+    const allCards = Array.from(document.querySelectorAll('.talent-card'));
+    if (!currentOpen) return;
+
+    const currentIdx = allCards.findIndex(c => c.dataset.id === currentOpen);
+    if (currentIdx === -1) return;
+
+    // 環狀切換：最後一位往下 = 第一位，第一位往上 = 最後一位
+    const total = allCards.length;
+    const nextIdx = (currentIdx + direction + total) % total;
+    const nextCard = allCards[nextIdx];
+    const nextId = nextCard.dataset.id;
+
+    // 切換內容
+    const allDetails = document.querySelectorAll('.talent-detail');
+    allDetails.forEach(d => d.classList.remove('show'));
+    allCards.forEach(c => c.classList.remove('active'));
+
+    document.getElementById('detail-' + nextId).classList.add('show');
+    nextCard.classList.add('active');
+    currentOpen = nextId;
+
+    // Reset scroll
+    const container = document.querySelector('.talent-modal-container');
+    if (container) container.scrollTop = 0;
+
+    // 載入下一位的影片
+    loadYouTubeVideos(nextId);
+  }
+
+  // Close modal on ESC / Navigate with arrow keys
+  document.addEventListener('keydown', (e) => {
+    const modal = document.getElementById('talentModal');
+    if (!modal || !modal.classList.contains('open')) return;
+
+    if (e.key === 'Escape') {
+      closeTalentModal();
+    } else if (e.key === 'ArrowLeft') {
+      navTalent(-1);
+    } else if (e.key === 'ArrowRight') {
+      navTalent(1);
+    }
+  });
+
+  // ─── Carousel (horizontal banner) ───
+  (function initCarousel() {
+    const track = document.getElementById('carouselTrack');
+    const dotsContainer = document.getElementById('carouselDots');
+    if (!track) return;
+    const slides = track.querySelectorAll('.carousel-slide');
+    const total = slides.length;
+    let current = 0;
+    let autoplayTimer = null;
+
+    // Build dots
+    for (let i = 0; i < total; i++) {
+      const dot = document.createElement('div');
+      dot.className = 'carousel-dot' + (i === 0 ? ' active' : '');
+      dot.addEventListener('click', () => goTo(i));
+      dotsContainer.appendChild(dot);
+    }
+
+    function goTo(i) {
+      current = (i + total) % total;
+      track.style.transform = `translateX(-${current * 100}%)`;
+      dotsContainer.querySelectorAll('.carousel-dot').forEach((d, idx) => {
+        d.classList.toggle('active', idx === current);
+      });
+      restartAutoplay();
+    }
+
+    window.carouselPrev = () => goTo(current - 1);
+    window.carouselNext = () => goTo(current + 1);
+
+    function restartAutoplay() {
+      clearInterval(autoplayTimer);
+      autoplayTimer = setInterval(() => goTo(current + 1), 10000);
+    }
+
+    restartAutoplay();
+  })();
+
+  // ─── Scroll reveal (IntersectionObserver) ───
+  (function initRevealObserver() {
+    const targets = document.querySelectorAll('.reveal, .stagger-children');
+    if (!('IntersectionObserver' in window) || targets.length === 0) {
+      targets.forEach(el => el.classList.add('in-view'));
+      return;
+    }
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('in-view');
+          observer.unobserve(entry.target);
+        }
+      });
+    }, {
+      threshold: 0.12,
+      rootMargin: '0px 0px -60px 0px'
+    });
+    targets.forEach(el => observer.observe(el));
+  })();
+
+  // ─── Formspree submit handler ───
+  (function initFormSubmit() {
+    function setupForm(formId) {
+      const form = document.getElementById(formId);
+      if (!form) return;
+      const statusEl = form.querySelector('.form-status');
+      const submitBtn = form.querySelector('button[type="submit"]');
+      const originalText = submitBtn.textContent;
+
+      form.addEventListener('submit', async (e) => {
+        e.preventDefault();
+
+        // Disable button + show sending state
+        submitBtn.disabled = true;
+        submitBtn.textContent = '傳送中...';
+        statusEl.className = 'form-status';
+        statusEl.textContent = '';
+
+        try {
+          const data = new FormData(form);
+          // 同步 _replyto：把標記 data-replyto 的 email 欄位值複製到 _replyto
+          const replyToInput = form.querySelector('input[data-replyto]');
+          if (replyToInput && replyToInput.value) {
+            data.append('_replyto', replyToInput.value);
+          }
+          const res = await fetch(form.action, {
+            method: 'POST',
+            body: data,
+            headers: { 'Accept': 'application/json' }
+          });
+
+          if (res.ok) {
+            statusEl.className = 'form-status success';
+            statusEl.innerHTML = '✓ 表單已成功送出，我們將盡快與您聯繫！';
+            form.reset();
+            submitBtn.textContent = '已送出';
+            // Re-enable after 4 seconds
+            setTimeout(() => {
+              submitBtn.disabled = false;
+              submitBtn.textContent = originalText;
+              statusEl.className = 'form-status';
+              statusEl.textContent = '';
+            }, 4500);
+          } else {
+            const json = await res.json().catch(() => ({}));
+            const msg = json.errors?.map(e => e.message).join(', ') || '送出失敗，請稍後再試';
+            throw new Error(msg);
+          }
+        } catch (err) {
+          statusEl.className = 'form-status error';
+          statusEl.innerHTML = '✕ ' + err.message + '<br>如持續無法送出，請改寫信至 <a href="mailto:sales@pinkiestudio.info">sales@pinkiestudio.info</a>';
+          submitBtn.disabled = false;
+          submitBtn.textContent = originalText;
+        }
+      });
+    }
+
+    setupForm('joinForm');
+    setupForm('contactForm');
+  })();
+</script>
+</body>
+</html>

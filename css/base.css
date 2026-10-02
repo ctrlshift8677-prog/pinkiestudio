@@ -1,0 +1,97 @@
+/* ═══════════════════════════════════════════════════════════════ */
+/*  base.css                                                       */
+/*  全站基礎：CSS 變數、reset、字型、共用元素（section / 按鈕等）  */
+/* ═══════════════════════════════════════════════════════════════ */
+
+  :root {
+    --cream: #fefcfb;
+    --blush: #faf5f3;
+    --pink: #f5eeed;
+    --rose: #ecdad8;
+    --accent: #b85a7a;
+    --gold: #a06070;
+    --text-dark: #2a1e22;
+    --text-mid: #5a4448;
+    --text-soft: #9a8888;
+    --white: #fff;
+    --nav-h: 80px;
+    /* near-white: barely-there peach left, barely-there sky-blue right — matching reference */
+    --grad-hero:    radial-gradient(ellipse at 0% 100%, rgba(255,215,200,0.28) 0%, transparent 55%),
+                    radial-gradient(ellipse at 100% 0%,  rgba(185,215,240,0.22) 0%, transparent 55%),
+                    linear-gradient(135deg, #fefaf8 0%, #fdf8fa 45%, #f8fcfe 100%);
+    --grad-about:   radial-gradient(ellipse at 0% 100%, rgba(255,210,198,0.22) 0%, transparent 50%),
+                    radial-gradient(ellipse at 100% 0%,  rgba(185,215,242,0.18) 0%, transparent 50%),
+                    linear-gradient(150deg, #fef9f7 0%, #fdf8fa 50%, #f8fbfe 100%);
+    --grad-talents: radial-gradient(ellipse at 5% 95%, rgba(255,212,200,0.24) 0%, transparent 52%),
+                    radial-gradient(ellipse at 95% 5%,  rgba(183,214,242,0.2) 0%, transparent 52%),
+                    linear-gradient(140deg, #fef9f7 0%, #fdf8fb 50%, #f7fbfe 100%);
+    --grad-join:    radial-gradient(ellipse at 5% 95%, rgba(255,210,200,0.2) 0%, transparent 50%),
+                    radial-gradient(ellipse at 95% 5%,  rgba(182,213,242,0.18) 0%, transparent 50%),
+                    linear-gradient(145deg, #fefaf8 0%, #fdf8fb 50%, #f7fbfe 100%);
+    --grad-contact: radial-gradient(ellipse at 0% 100%, rgba(255,208,198,0.2) 0%, transparent 48%),
+                    radial-gradient(ellipse at 100% 0%,  rgba(180,212,242,0.17) 0%, transparent 48%),
+                    linear-gradient(135deg, #fef9f7 0%, #fdf7fa 50%, #f6fafe 100%);
+    --grad-shop:    radial-gradient(ellipse at 5% 95%, rgba(255,206,196,0.18) 0%, transparent 48%),
+                    radial-gradient(ellipse at 95% 5%,  rgba(178,210,242,0.16) 0%, transparent 48%),
+                    linear-gradient(130deg, #fef9f7 0%, #fdf7fa 50%, #f5fafe 100%);
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    font-family: 'Noto Sans TC', sans-serif;
+    background: var(--cream);
+    color: var(--text-dark);
+    overflow-x: hidden;
+  }
+
+
+/* ─── SECTIONS COMMON ─── */
+  /* ─── SECTIONS COMMON ─── */
+  section { padding: 100px 48px; }
+
+  .section-label {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 3px;
+    color: var(--accent);
+    text-transform: uppercase;
+    margin-bottom: 16px;
+  }
+
+  .section-label::before {
+    content: '★';
+    font-size: 10px;
+  }
+
+  .section-title {
+    font-family: 'Noto Serif TC', serif;
+    font-size: clamp(32px, 4vw, 48px);
+    font-weight: 900;
+    line-height: 1.2;
+    color: var(--text-dark);
+    margin-bottom: 8px;
+  }
+
+  /* 漸層強調色 — 應用於所有大標題的 <span> */
+  .section-title span,
+  .hero-text h1 span {
+    background: linear-gradient(135deg, #ff8aab 0%, #c85a8a 35%, #9b6bc8 70%, #6b8fd4 100%);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    color: transparent;
+    /* fallback for browsers that don't support background-clip:text */
+    background-size: 200% 200%;
+    animation: titleGradient 8s ease infinite;
+  }
+
+  @keyframes titleGradient {
+    0%, 100% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+  }
